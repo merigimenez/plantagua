@@ -1,0 +1,14 @@
+<div class="container-profile">
+    <%# flex item 1 %>
+    <div class="profile-user">
+
+      <h4><%= @user.full_name %></h4>
+      <p>E-mail: <%= @user.email %></p>
+        <div class="btn-small">
+          <%= link_to "Edit profile", edit_user_registration_path %>
+        </div>
+        <div class="btn-small">
+          <!--%= link_to "Add new garden", new_garden_path %-->
+        </div>
+    </div>
+</div>
