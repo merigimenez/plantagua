@@ -1,5 +1,6 @@
 class Garden < ApplicationRecord
-  # has_many :users, through: :users_gardens, source: :xx
+  has_many :user_gardens
+  has_many :users, through: :user_gardens
   # has_many :plants, dependent: :destroy
 
   validates :name, presence: true
