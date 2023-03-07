@@ -1,2 +1,3 @@
 class PlantsController < ApplicationController
+
 end
