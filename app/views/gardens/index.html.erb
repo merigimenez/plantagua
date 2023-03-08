@@ -1,0 +1,11 @@
+<div>
+  <h1>My Gardens</h1>
+  <% @gardens.each do |element| %>
+    <%= link_to garden_path(element) do %>
+      <div>
+        <div><%= garden.name %></div>
+        <div>placeholder image</div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
