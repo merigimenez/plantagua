@@ -11,7 +11,8 @@
 .homepage-bottom {
   display: flex;
   flex-flow:column;
-  height: 33%;
+  height: fit-content;
+  min-height: 33%;
   width: 100%;
   background-color:rgba(245, 245, 244, 0.7);
   color:#2A4439;

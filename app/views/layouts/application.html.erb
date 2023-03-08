@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class = "<%= "leaves" if @background == "leaves" %>">
+  <body class = "<%= ("leaves" if @background == "leaves") || ("white-hover" if controller_name == 'sessions')%>">
     <%= render "shared/flashes" %>
 
     <div class = "<%= "container " unless @background == "leaves" %>">

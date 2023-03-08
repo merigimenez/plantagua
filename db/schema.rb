@@ -14,31 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_215117) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "plants", force: :cascade do |t|
-    t.string "name"
-    t.integer "frequency"
-    t.boolean "outdoor", default: false
-    t.date "last_day"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "synonyms", default: [], array: true
-    t.string "image"
-
-  create_table "gardens", force: :cascade do |t|
-    t.string "location"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_gardens", force: :cascade do |t|
-    t.bigint "garden_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["garden_id"], name: "index_user_gardens_on_garden_id"
-    t.index ["user_id"], name: "index_user_gardens_on_user_id"
-
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -67,6 +42,33 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_215117) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "gardens", force: :cascade do |t|
+    t.string "location"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.integer "frequency"
+    t.boolean "outdoor", default: false
+    t.date "last_day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "synonyms", default: [], array: true
+    t.string "image"
+  end
+
+  create_table "user_gardens", force: :cascade do |t|
+    t.bigint "garden_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_user_gardens_on_garden_id"
+    t.index ["user_id"], name: "index_user_gardens_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -81,11 +83,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_215117) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
-  add_foreign_key "user_gardens", "gardens"
-  add_foreign_key "user_gardens", "users"
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-
+  add_foreign_key "user_gardens", "gardens"
+  add_foreign_key "user_gardens", "users"
 end
