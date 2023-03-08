@@ -13,6 +13,7 @@ puts 'Cleaning Database'
 User.destroy_all
 Plant.destroy_all
 Garden.destroy_all
+UserGarden.destroy_all
 
 puts 'Creating Plants'
 trefle_token = '4oi05SBpTozWwS50K7L0z6JKu4RBmark17I-Qiq9gUg'
