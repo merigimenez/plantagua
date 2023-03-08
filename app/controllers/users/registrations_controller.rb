@@ -7,7 +7,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   # def new
   #   super
-  # end
+  #  @background = 'white-hover'
+  #end
 
   # POST /resource
   # def create
@@ -15,9 +16,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
+   def edit
   #   super
-  # end
+    @background = 'white-solid'
+   end
 
   # PUT /resource
   # def update

@@ -1,47 +1,71 @@
 .form-on-green {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 70%;
+  margin: auto;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  gap: 4px;
-
+  .user_password {
+    .form-text {
+      margin-bottom:0;
+    }
+  }
   .form-inputs {
     font-family: 'Gilroy-Light';
-    letter-spacing: 14%;
+    letter-spacing: 0.14em;
+    div {
+      margin-bottom: 38px;
+    }
     input, select {
       background-color: #f5f5f4;
       border-radius: 4px;
+      color: #2A4439;
     }
     label {
+      text-decoration: none;
       color: #FFFEF4;
+      margin-bottom: 0;
     }
     .form-actions {
-      margin:0  auto;
+      margin: 0 auto;
+      letter-spacing: 0.14em;
     }
   }
 }
 .form-on-white {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 70%;
+  margin: auto;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  gap: 4px;
+  a {
+    text-decoration: none;
+    color: #2A4439;
+    text-align: center;
+  }
 
   .form-inputs {
     font-family: 'Gilroy-Light';
-    letter-spacing: 14%;
+    letter-spacing: 0.14em;
+    div {
+      margin-bottom: 38px;
+    }
     input, select {
       background-color: #f5f5f4;
       border-color: #2A4439;
-      border-radius: 4px;
+      color: #2A4439;
     }
     label {
+      text-decoration: none;
       color: #2A4439;
+      margin-bottom: 0;
     }
     .form-actions {
       margin:0  auto;
+      letter-spacing: 0.14em;
     }
   }
 }
