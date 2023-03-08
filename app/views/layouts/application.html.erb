@@ -13,7 +13,7 @@
   <body class = "d-flex flex-column vh-100 <%= set_background_class(params) %>">
    <%= render "shared/flashes" %>
 
-    <div class = "main-container <%= "container " unless set_background_class(params) == "leaves" %>">
+    <div class = "main-container <%= "container " unless set_background_class(params) == "leaves" ||set_background_class(params) == "white-solid" %>">
       <%= yield %>
     </div>
   </body>
