@@ -162,7 +162,7 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.14.2-arm64-darwin)
+    nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.6)
@@ -266,7 +266,7 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
-  arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
@@ -296,4 +296,4 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.7
+   2.4.7
