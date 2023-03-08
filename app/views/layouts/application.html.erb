@@ -13,7 +13,7 @@
   <body class = "<%= "leaves" if @background == "leaves" %>">
     <%= render "shared/flashes" %>
 
-    <div class = "<%= "container" unless @background == "leaves" %>">
+    <div class = "<%= "container " unless @background == "leaves" %>">
       <%= yield %>
     </div>
   </body>
