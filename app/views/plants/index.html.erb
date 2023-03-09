@@ -1,0 +1,6 @@
+<%= form_with url: plants_path, method: :get, html: { class: "", data: { search_plant_target: "form" }}  do |f| %>
+  <%= f.text_field :query, input_html: { value: ""} %>
+  <%= f.submit "Search", class: 'btn btn-success'%>
+<% end %>
+
+<%# <% @plants.each do |plant| %>

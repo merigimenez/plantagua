@@ -1,6 +1,10 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: %i[show]
 
+  def index
+    @plants = Plant.all
+  end
+
   def show; end
 
   def new
