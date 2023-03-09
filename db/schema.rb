@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_215117) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_161804) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_215117) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "garden_plants", force: :cascade do |t|
+    t.bigint "garden_id", null: false
+    t.bigint "plant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "photo"
+    t.index ["garden_id"], name: "index_garden_plants_on_garden_id"
+    t.index ["plant_id"], name: "index_garden_plants_on_plant_id"
   end
 
   create_table "gardens", force: :cascade do |t|
@@ -85,6 +96,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_215117) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+
+  add_foreign_key "garden_plants", "gardens"
+  add_foreign_key "garden_plants", "plants"
+
   add_foreign_key "user_gardens", "gardens"
   add_foreign_key "user_gardens", "users"
 end
