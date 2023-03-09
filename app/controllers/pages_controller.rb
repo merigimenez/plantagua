@@ -1,7 +1,4 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
-
-  def home
-    @background = "leaves"
-  end
+  def home; end
 end

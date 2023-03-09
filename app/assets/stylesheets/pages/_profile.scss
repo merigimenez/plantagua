@@ -1,0 +1,42 @@
+.profile-user {
+  height: 100vh;
+}
+.profile-user-photo {
+  object-fit: cover;
+  height: 64%;
+  width: 100%;
+}
+.profile-user-bottom {
+  display: flex;
+  flex-flow:column;
+  align-items: start;
+  margin: auto;
+  height: fit-content;
+  min-height: 40%;
+  width: 100%;
+  background-color:rgba(245, 245, 244, 1);
+  padding:25px;
+  position: absolute;
+  bottom: 0;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  font-size: 16px;
+  #profile-name {
+    font-size:24px;
+    letter-spacing: 0.14rem;
+  }
+  p {
+    margin: 0;
+  }
+}
+.profile-user-icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+.profile-user-icon {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: 28px;
+}

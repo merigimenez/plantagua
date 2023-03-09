@@ -1,27 +1,23 @@
-<div class = "form-on-green">
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :full_name,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "full_name" }%>
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :notification_time,
-                  required: true,
-                  input_html: { autocomplete: "Time of notifications" } %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "btns white-btn" %>
-    </div>
-  <% end %>
-</div>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-on-green"} , data: { turbo: :false }) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :full_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "full_name" }%>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :notification_time,
+                required: true,
+                input_html: { autocomplete: "Time of notifications" } %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: "btns white-btn" %>
+  </div>
+<% end %>

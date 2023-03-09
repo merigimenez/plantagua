@@ -37,16 +37,16 @@ pages = 1 #(1..21_863)
   end
 #end
 
+puts 'Creating gardens'
+garden_test = Garden.create(
+  name: 'My test garden',
+  location: 'Barcelona',
+)
+
 puts 'Creating users'
-gen = User.create!(
+gen = User.create(
   email: 'gen@gen.com',
   password: '12345678',
   full_name: 'Gen',
   notification_time: '19:00:00.00'
-)
-
-puts 'Creating gardens'
-garden_test = Garden.create(
-  name: 'My test garden',
-  location: 'Barcelona'
 )
