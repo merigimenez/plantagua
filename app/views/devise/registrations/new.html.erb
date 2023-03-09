@@ -1,3 +1,4 @@
+<%= render "shared/flashes"%>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-on-green"} , data: { turbo: :false }) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
