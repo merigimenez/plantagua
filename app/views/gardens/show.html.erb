@@ -1,6 +1,6 @@
 <h1><%= @garden.name %></h1>
 <p><%= @garden.location %></p>
-<div class="d-flex">
-  <%= link_to "Edit this garden", edit_garden_path(@garden), class: "gradient-btn" %>
-  <%= button_to "Destroy this garden", @garden, method: :delete, class: "gradient-btn ms-4" %>
+<div class='d-flex'>
+  <%= link_to 'Edit garden', edit_garden_path(@garden), class: 'btns white-btn' %>
+  <%= button_to 'Destroy garden', @garden, method: :delete, class: 'btns white-btn ms-4' %>
 </div>

@@ -50,3 +50,4 @@ gen = User.create(
   full_name: 'Gen',
   notification_time: '19:00:00.00'
 )
+

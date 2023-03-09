@@ -1,11 +1,22 @@
-<div>
+<div class='card-index'>
   <h1>My Gardens</h1>
-  <% @gardens.each do |element| %>
-    <%= link_to garden_path(element) do %>
-      <div>
-        <div><%= garden.name %></div>
-        <div>placeholder image</div>
-      </div>
+
+  <div class='card-white'>
+
+    <% @gardens.each do |element| %>
+        <%= link_to garden_path(element) do %>
+          <div class="card-garden">
+            <img src="https://e0.pxfuel.com/wallpapers/236/153/desktop-wallpaper-leaves-plant-green-dark-for-your-mobile-tablet-explore-plant-tropical-plant-plant-vs-zombies-jimmy-page-dark-leaves-aesthetic.jpg" alt="">
+            <div class="card-info">
+              <h2><%= element.name %></h2>
+              <p><i class="fa-solid fa-seedling"></i> 45</p>
+              <p><i class="fa-solid fa-user-group"></i> gen@gen.com</p>
+            </div>
+          </div>
+        <% end %>
     <% end %>
-  <% end %>
+
+    <%= link_to '+', new_garden_path, class:'btns green-btn' %>
+  </div>
+
 </div>

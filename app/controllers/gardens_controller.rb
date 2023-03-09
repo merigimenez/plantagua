@@ -6,12 +6,22 @@ class GardensController < ApplicationController
     @garden = Garden.new
   end
 
-  # fyi id not needed
+  # list all gardens
+  def index
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR platform ILIKE :query"
+      @gardens = Garden.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @gardens = Garden.all
+    end
+  end
+
+
   def create
     @garden = Garden.new(garden_params)
 
     if @garden.save
-      @user_garden = UserGarden.create(user_id: current_user.id, garden_id: @garden.id)
+      @user_garden = UserGarden.create(user_id: current_user.id, garden_id: @garden.id) #fyi _id and .id not needed
       redirect_to garden_path(@garden) #goes into garden
     else
       render "gardens/new", status: :unprocessable_entity
@@ -27,7 +37,7 @@ class GardensController < ApplicationController
 
   def update
     if @garden.update(garden_params)
-      redirect_to garden_path(current_user)
+      redirect_to garden_path(@garden)
     else
       render "gardens/edit", status: :unprocessable_entity
     end
@@ -50,17 +60,3 @@ class GardensController < ApplicationController
   end
 
 end
-
-
-
-
-
-  # List of all the games available in the app
-  # def index
-  #   if params[:query].present?
-  #     sql_query = "name ILIKE :query OR platform ILIKE :query"
-  #     @games = Game.where(sql_query, query: "%#{params[:query]}%")
-  #   else
-  #     @games = Game.all
-  #   end
-  # end
