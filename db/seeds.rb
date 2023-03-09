@@ -10,6 +10,7 @@ require 'json'
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts 'Cleaning Database'
+UserGarden.destroy_all
 User.destroy_all
 Plant.destroy_all
 Garden.destroy_all
@@ -37,23 +38,12 @@ puts 'Creating users'
 Gen = User.create(
   email: 'gen@gen.com',
   password: '12345678',
-  full_name: 'Gen'
-)
-
-puts 'Creating gardens'
-Garden_home = Garden.create(
-  name: 'My test garden',
-  location: 'Barcelona',
+  full_name: 'Gen',
+  notification_time: '19:00:00.00'
 )
 
 puts 'Creating gardens'
 Garden_test = Garden.create(
-  name: 'My test garden',
-  location: 'Barcelona',
-)
-
-puts 'Creating gardens'
-Garden_lima = Garden.create(
   name: 'My test garden',
   location: 'Barcelona',
 )
