@@ -26,13 +26,13 @@ pages = 1 #(1..21_863)
   info = JSON.parse(file)
   final= info["data"]
   final.each do |plant|
-    Plant.new(
-      { name: plant["common_name"],
-        frequency: rand(2..25),
-        outdoor: [true, false].sample,
-        last_day: Date.today,
-        image: plant["image_url"],
-        synonyms: plant["synonyms"] }
+    Plant.create(
+      name: plant["common_name"],
+      frequency: rand(2..25),
+      outdoor: [true, false].sample,
+      last_day: Date.today,
+      image: plant["image_url"],
+      synonyms: plant["synonyms"]
     )
   end
 #end
@@ -50,4 +50,3 @@ gen = User.create(
   full_name: 'Gen',
   notification_time: '19:00:00.00'
 )
-

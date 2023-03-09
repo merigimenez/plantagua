@@ -3,6 +3,14 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all
+    if params[:query].present?
+      @plants = @plants.where("name ILIKE ?", "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: "plants/plants", locals: { plants: @plants}, formats:[:html]}
+    end
   end
 
   def show; end

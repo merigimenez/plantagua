@@ -1,6 +1,15 @@
-<%= form_with url: plants_path, method: :get, html: { class: "", data: { search_plant_target: "form" }}  do |f| %>
-  <%= f.text_field :query, input_html: { value: ""} %>
-  <%= f.submit "Search", class: 'btn btn-success'%>
-<% end %>
+<h1 class="header-top">Search</h1>
+<div data-controller="search-plant" class="w-100">
 
-<%# <% @plants.each do |plant| %>
+  <%= form_with url: plants_path, method: :get, html: { class: "d-flex flex-row form-on-green", data: { search_plant_target: "form" }}  do |f| %>
+    <%= f.text_field  :query,
+                      class: "w-100",
+                      input_html: { value: ""},
+                      placeholder: "Search for your plant...",
+                      value: params[:query],
+                      data: {search_plant_target: "input",
+                            action: "keyup->search-plant#update"} %>
+  <% end %>
+
+  <%= render "plants", plants: @plants %>
+</div>
