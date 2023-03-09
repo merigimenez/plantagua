@@ -11,9 +11,12 @@ require 'json'
 
 puts 'Cleaning Database'
 UserGarden.destroy_all
+GardenPlant.destroy_all
 User.destroy_all
 Plant.destroy_all
 Garden.destroy_all
+
+
 
 puts 'Creating Plants'
 trefle_token = '4oi05SBpTozWwS50K7L0z6JKu4RBmark17I-Qiq9gUg'
@@ -34,16 +37,17 @@ pages = 1 #(1..21_863)
   end
 #end
 
+puts 'Creating gardens'
+garden_test = Garden.create(
+  name: 'My test garden',
+  location: 'Barcelona',
+)
+
 puts 'Creating users'
-Gen = User.create(
+gen = User.create(
   email: 'gen@gen.com',
   password: '12345678',
   full_name: 'Gen',
   notification_time: '19:00:00.00'
 )
 
-puts 'Creating gardens'
-Garden_test = Garden.create(
-  name: 'My test garden',
-  location: 'Barcelona',
-)

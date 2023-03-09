@@ -1,20 +1,11 @@
 // Specific CSS for your home-page
-.leaves {
-  background-image: asset-url('home.jpg');
-  background-size: cover;
-  background-position: center;
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-}
 .homepage-bottom {
   display: flex;
   flex-flow:column;
-  height: 33%;
+  height: fit-content;
+  min-height: 33%;
   width: 100%;
   background-color:rgba(245, 245, 244, 0.7);
-  color:#2A4439;
   padding:25px;
   position: absolute;
   bottom: 0;
