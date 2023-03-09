@@ -3,16 +3,14 @@
 }
 .profile-user-photo {
   object-fit: cover;
-  height: 64%;
+  height: 66%;
   width: 100%;
 }
 .profile-user-bottom {
-  display: flex;
-  flex-flow:column;
-  align-items: start;
+  text-align: center;
   margin: auto;
   height: fit-content;
-  min-height: 40%;
+  min-height: 38%;
   width: 100%;
   background-color:rgba(245, 245, 244, 1);
   padding:25px;

@@ -1,6 +1,7 @@
+<%= render "shared/flashes"%>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-on-white"}) do |f| %>
   <%= f.error_notification %>
-  <h1 class = "header-top">Edit my profile</h1>
+  <h1 class = "header-top-forms">Edit my profile</h1>
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
 
