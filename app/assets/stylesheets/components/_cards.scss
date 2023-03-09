@@ -1,3 +1,4 @@
+// cards wrapper
 .card-index {
   display: flex;
   flex-direction: column;
@@ -5,12 +6,9 @@
   height: 100%;
   width: 100%;
   position: relative;
-
-  h1 {
-    font-size: 36px;
-  }
 }
 
+// gardens wrapper - white
 .card-white {
   display: flex;
   flex-direction: column;
@@ -19,9 +17,7 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  // left: 0;
-  // right:0;
-  background-color: #F5f4f4;
+  background-color: $polina-white;
   border-radius: 25px 25px 0px 0px;
 
   .green-btn {
@@ -37,15 +33,16 @@
   }
 }
 
+// garden
 .card-garden {
   display: flex;
-  flex-grow: 1;
   color: black;
-  background-color: #F5f4f4;
-  border: 1px solid black;
+  background-color: $polina-white;
+  border: 0.7px solid black;
   border-radius: 25px;
   height: 160px;
   margin: 40px 40px 0 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   img {
     height:100%;
@@ -55,8 +52,8 @@
   }
 
   .card-info {
-    padding: 20px;
-
+    padding: 16px;
+    width: 200px;
 
     h2 {
       font-family: 'Gilroy-Light', sans-serif;
@@ -69,4 +66,65 @@
       margin: 0;
     }
   }
+}
+
+
+// garden show main
+.garden-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background-color: $background-green;
+  width: 100%;
+}
+
+// plants wrapper
+.card-garden-plant {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  width: 100%;
+  height: 100%;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+// plant
+.card-user-plant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 160px;
+  width: 105px;
+  margin: 5px 5px 15px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: $polina-white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  // box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  img {
+    height: 85px;
+    width: 85px;
+    margin: 5px 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  p {
+    margin: 0 5px;
+  }
+}
+
+.bottom-buttons {
+  display: flex;
+  margin:
+
 }
