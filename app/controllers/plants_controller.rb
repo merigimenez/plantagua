@@ -5,6 +5,8 @@ class PlantsController < ApplicationController
     @plants = Plant.all
     if params[:query].present?
       @plants = @plants.where("name ILIKE ?", "%#{params[:query]}%")
+                       .or(@plants.where("scientific_name ILIKE ?", "%#{params[:query]}%"))
+                       .or(@plants.where("synonyms ILIKE ?", "%#{params[:query]}%"))
     end
 
     respond_to do |format|
@@ -15,14 +17,6 @@ class PlantsController < ApplicationController
 
   def show; end
 
-  def new
-    @plants = Plant.all
-    @plant = Plant.new
-  end
-
-  def create
-    @plant = Plant.new(plant_params)
-  end
 
   private
 
@@ -31,6 +25,6 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:name, :frequency, :outdoor, :last_day, :synonyms)
+    params.require(:plant).permit(:name, :frequency, :outdoor, :synonyms)
   end
 end

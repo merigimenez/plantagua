@@ -19,23 +19,23 @@ Garden.destroy_all
 
 
 puts 'Creating Plants'
-trefle_token = '4oi05SBpTozWwS50K7L0z6JKu4RBmark17I-Qiq9gUg'
-pages = (1..3) #(1..21_863)
-pages.each do |page|
-  file = URI.open("https://trefle.io/api/v1/plants?token=#{trefle_token}&page=#{page}").read
+# trefle_token = '4oi05SBpTozWwS50K7L0z6JKu4RBmark17I-Qiq9gUg'
+# pages = (1..3) #(1..21_863)
+# pages.each do |page|
+  # file = URI.open("https://trefle.io/api/v1/plants?token=#{trefle_token}&page=#{page}").read
+  file = File.read("db/join_plants.json")
   info = JSON.parse(file)
   final = info["data"]
   final.each do |plant|
-    Plant.create(
+    Plant.create!(
       name: plant["common_name"],
-      frequency: rand(2..25),
-      outdoor: [true, false].sample,
-      last_day: Date.today,
-      image: plant["image_url"],
-      synonyms: plant["synonyms"]
+      scientific_name: plant["scientific_name"],
+      frequency: plant["frequency"],
+      image: plant["image"]
+      # synonyms: plant["synonyms"]
     )
   end
-end
+# end
 
 
 puts 'Creating users'
@@ -61,7 +61,7 @@ garden_home= Garden.create(
 )
 garden_fruit = Garden.create(
   name: 'Fruit Garden',
-  location: 'Cuzco, Peru',
+  location: 'Barcelona, Spain',
 )
 
 
@@ -71,60 +71,80 @@ garden_plant = GardenPlant.create(
   plant_id: Plant.find(1).id,
   name: Plant.find(1).name,
   photo: Plant.find(1).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.find(2).id,
   name: Plant.find(2).name,
   photo: Plant.find(2).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.find(3).id,
   name: Plant.find(3).name,
   photo: Plant.find(3).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.find(4).id,
   name: Plant.find(4).name,
   photo: Plant.find(4).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.find(5).id,
   name: Plant.find(5).name,
   photo: Plant.find(5).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.find(6).id,
   name: Plant.find(6).name,
   photo: Plant.find(6).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.find(7).id,
   name: Plant.find(7).name,
   photo: Plant.find(7).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.find(8).id,
   name: Plant.find(8).name,
   photo: Plant.find(8).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.find(9).id,
   name: Plant.find(9).name,
   photo: Plant.find(9).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.find(10).id,
   name: Plant.find(10).name,
   photo: Plant.find(10).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 
 puts 'Creating garden plants for garden 2'
@@ -133,24 +153,32 @@ garden_plant = GardenPlant.create(
   plant_id: Plant.find(11).id,
   name: Plant.find(11).name,
   photo: Plant.find(11).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_fruit.id,
   plant_id: Plant.find(12).id,
   name: Plant.find(12).name,
   photo: Plant.find(12).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_fruit.id,
   plant_id: Plant.find(13).id,
   name: Plant.find(13).name,
   photo: Plant.find(13).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 garden_plant = GardenPlant.create(
   garden_id: garden_fruit.id,
   plant_id: Plant.find(14).id,
   name: Plant.find(14).name,
   photo: Plant.find(14).image,
+  last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
 )
 
 

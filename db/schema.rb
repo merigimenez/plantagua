@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_08_161804) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_10_130448) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_161804) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "photo"
+    t.date "last_day"
+    t.boolean "outdoor"
     t.index ["garden_id"], name: "index_garden_plants_on_garden_id"
     t.index ["plant_id"], name: "index_garden_plants_on_plant_id"
   end
@@ -62,13 +64,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_161804) do
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
-    t.integer "frequency"
-    t.boolean "outdoor", default: false
-    t.date "last_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "synonyms", default: [], array: true
     t.string "image"
+    t.string "scientific_name"
+    t.jsonb "frequency"
   end
 
   create_table "user_gardens", force: :cascade do |t|

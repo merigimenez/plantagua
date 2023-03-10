@@ -10,5 +10,5 @@ Rails.application.routes.draw do
 
   resources :gardens
 
-  resources :plants, only: %i[index show new create update]
+  resources :plants, only: %i[index show]
 end
