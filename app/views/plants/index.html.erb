@@ -1,7 +1,7 @@
 <div class="garden-main">
   <h1 class="header-top">Search</h1>
 
-  <div data-controller="search-plant" class="w-100 mb-4">
+  <div data-controller="search-plant" data-search-plant-garden-value=<%= params[:garden_id] %> class="w-100 mb-4">
     <%= form_with url: plants_path, method: :get, html: { class: "d-flex flex-row form-on-green", data: { search_plant_target: "form" }}  do |f| %>
       <%= f.text_field  :query,
                         class: "w-100",
@@ -11,9 +11,8 @@
                         data: {search_plant_target: "input",
                               action: "keyup->search-plant#update"} %>
     <% end %>
+    <div>
+      <%= render "plants", plants: @plants %>
+    </div>
   </div>
-</div>
-
-<div>
-  <%= render "plants", plants: @plants %>
 </div>
