@@ -27,12 +27,12 @@ pages = 1 #(1..21_863)
   final= info["data"]
   final.each do |plant|
     Plant.create(
-      { name: plant["common_name"],
-        frequency: rand(2..25),
-        outdoor: [true, false].sample,
-        last_day: Date.today,
-        image: plant["image_url"],
-        synonyms: plant["synonyms"] }
+      name: plant["common_name"],
+      frequency: rand(2..25),
+      outdoor: [true, false].sample,
+      last_day: Date.today,
+      image: plant["image_url"],
+      synonyms: plant["synonyms"]
     )
   end
 #end

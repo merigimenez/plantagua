@@ -10,8 +10,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class = "d-flex flex-column vh-100 <%= set_background_class(params) %>">
-   <%= render "shared/flashes" %>
+  <body class = "d-flex flex-column vh-100 <%= set_background_class(params) %>" data-controller="navigation" data-action="click->navigation#closeNavigation keydown->navigation#closeNavigation touch->navigation#closeNavigation">
+   <!--%= render "shared/flashes"%-->
    <%= render "shared/navbar" unless set_background_class(params) == "leaves" %>
     <div class = "main-container <%= "container " unless set_background_class(params) == "leaves" ||set_background_class(params) == "white-solid" %>">
       <%= yield %>
