@@ -7,9 +7,10 @@
 
   <div class="card-garden-plant">
       <% @garden.plants.each do |element| %>
-          <%= link_to plant_path(element), class:"card-user-plant" do %>
+          <%= link_to plant_path(element, garden_id: @garden.id), class:"card-user-plant" do %>
               <img src= <%= element.image %> alt="plant">
               <p><%= element.name %></p>
+              <div class="water"><p><i class="fa-solid fa-droplet"></i>1 day</p></div>
           <% end %>
       <% end %>
   </div>

@@ -1,17 +1,16 @@
-
-
 <%= simple_form_for([garden, garden_plant], html: {class: "form-on-green"}) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form">
       <%= f.input :name %>
+      <%= f.input :garden_id, collection: %w[1 2] %>
       <%# <%= f.input :photo %>
       <%# <%= f.input :last_day %>
       <%= f.hidden_field :plant_id, value: params[:plant_id] %>
     </div>
 
   <div>
-    <%= f.button :submit , class: 'btns white-btn'%>
+    <%= f.button :submit , value: "Add", class: 'btns white-btn'%>
   </div>
 <% end %>
