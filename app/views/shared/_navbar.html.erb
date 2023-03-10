@@ -1,5 +1,5 @@
 <div class='navbar-plantaqua'>
-  <% if params['controller'] == "users" && params['action'] == 'show'%>
+  <% if params['controller'] == "users" && params['action'] == 'show' && :back != 'root_path'%>
     <%= link_to user_session_path do %>
         <h1><i class="fa-solid fa-arrow-left"></i></h1>
     <% end %>
