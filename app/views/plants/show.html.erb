@@ -1,3 +1,4 @@
+
 <div class="card-plant-show">
   <img src=<%= @plant.image %> alt="plant image">
   <h2><%= @plant.name %></h2>
@@ -6,4 +7,8 @@
     <% month = Date.today.strftime("%B") %>
     <p id="frequency">Frequency: <strong><%= @plant.frequency[month.downcase] %></strong> days in <strong><%= month %></strong></p>
   </div>
+
+
+  <%= link_to 'Add plant', new_garden_garden_plant_path(@garden, plant_id: params[:id]), class: 'btns white-btn btn-big' %>
+
 </div>

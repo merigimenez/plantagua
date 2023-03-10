@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[full_name notification_time photo])
   end
 
+  # ---previous page navigation--
+
   def after_sign_in_path_for(resource)
     user_path(current_user)
   end
