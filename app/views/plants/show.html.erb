@@ -1,10 +1,9 @@
 <div class="card-plant-show">
   <img src=<%= @plant.image %> alt="plant image">
-  <h2>Name: <%= @plant.name %></h2>
-  <p><%= @plant.scientific_name %></p>
-
-  <%# <p>Frequency: <%= @plant.frequency[:] </p>%>
-
-
-
+  <h2><%= @plant.name %></h2>
+  <div class="">
+    <p id="scientific_name"><%= @plant.scientific_name %></p>
+    <% month = Date.today.strftime("%B") %>
+    <p id="frequency">Frequency: <strong><%= @plant.frequency[month.downcase] %></strong> days in <strong><%= month %></strong></p>
+  </div>
 </div>

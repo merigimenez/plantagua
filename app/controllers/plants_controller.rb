@@ -5,8 +5,8 @@ class PlantsController < ApplicationController
     @plants = Plant.all
     if params[:query].present?
       @plants = @plants.where("name ILIKE ?", "%#{params[:query]}%")
-                       .or(@plants.where("scientific_name ILIKE ?", "%#{params[:query]}%"))
-                       .or(@plants.where("synonyms ILIKE ?", "%#{params[:query]}%"))
+                      #  .or(@plants.where("scientific_name ILIKE ?", "%#{params[:query]}%"))
+                      #  .or(@plants.where("synonyms ILIKE ?", "%#{params[:query]}%"))
     end
 
     respond_to do |format|
