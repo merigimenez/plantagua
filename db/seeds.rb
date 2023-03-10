@@ -20,11 +20,11 @@ Garden.destroy_all
 
 puts 'Creating Plants'
 trefle_token = '4oi05SBpTozWwS50K7L0z6JKu4RBmark17I-Qiq9gUg'
-pages = 1 #(1..21_863)
-#pages.each do |page|
-  file = URI.open("https://trefle.io/api/v1/plants?token=#{trefle_token}&page=#{pages}").read
+pages = (1..3) #(1..21_863)
+pages.each do |page|
+  file = URI.open("https://trefle.io/api/v1/plants?token=#{trefle_token}&page=#{page}").read
   info = JSON.parse(file)
-  final= info["data"]
+  final = info["data"]
   final.each do |plant|
     Plant.create(
       name: plant["common_name"],
@@ -35,7 +35,7 @@ pages = 1 #(1..21_863)
       synonyms: plant["synonyms"]
     )
   end
-#end
+end
 
 puts 'Creating gardens'
 garden_test = Garden.create(
