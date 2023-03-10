@@ -40,7 +40,7 @@ pages = 1 #(1..21_863)
 
 puts 'Creating users'
 user_gen = User.create(
-  email: 'gen@gmail.com',
+  email: 'genwarthon@gmail.com',
   password: '12345678',
   full_name: 'Genevieve Warthon',
   notification_time: '19:00:00.00'
@@ -48,7 +48,7 @@ user_gen = User.create(
 
 puts 'Creating users'
 user_ani = User.create(
-  email: 'anais@gmail.com',
+  email: 'anaisw@gmail.com',
   password: '12345678',
   full_name: 'Anais Warthon',
   notification_time: '19:00:00.00'
