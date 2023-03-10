@@ -1,8 +1,19 @@
 <div class="card-index">
 
   <div class="garden-main">
-    <h1 class="header-top"><%= @garden.name %></h1>
-    <p><i class="fa-solid fa-location-dot"></i> <%= @garden.location %></p>
+    <p class = "mt-5 mb-1"><i class="fa-solid fa-location-dot"></i> <%= @garden.location %></p>
+    <h1 class="header-top mt-2"><%= @garden.name %></h1>
+    <div class = "d-flex flex-row">
+      <%= link_to plants_path(garden_id: @garden.id), class: 'px-3' do %>
+        <i class="fa-solid fa-plus"></i>
+      <% end %>
+      <%= button_to @garden, method: :delete, class: 'px-3' do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
+      <%= link_to edit_garden_path(@garden), class: 'px-3' do%>
+        <i class="fa-solid fa-wrench"></i>
+      <% end %>
+    </div>
   </div>
 
   <div class="card-garden-plant">
@@ -14,11 +25,11 @@
       <% end %>
   </div>
 
-  <div class='bottom-buttons'>
+  <!--div class='bottom-buttons'>
     <%= link_to 'Add plant', plants_path(garden_id: @garden.id), class: 'btns white-btn btn-big' %>
     <%= link_to 'Edit', edit_garden_path(@garden), class: 'btns white-btn' %>
     <%= button_to 'Delete', @garden, method: :delete, class: 'btns white-btn' %>
-  </div>
+  </div-->
 
 </div>
 
