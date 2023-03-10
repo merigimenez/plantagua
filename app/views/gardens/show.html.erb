@@ -1,22 +1,26 @@
 <div class="card-index">
 
-<div class="garden-main">
-  <h1 class="header-top"><%= @garden.name %></h1>
-  <p><i class="fa-solid fa-location-dot"></i> <%= @garden.location %></p>
+  <div class="garden-main">
+    <h1 class="header-top"><%= @garden.name %></h1>
+    <p><i class="fa-solid fa-location-dot"></i> <%= @garden.location %></p>
+  </div>
+
+  <div class="card-garden-plant">
+      <% @garden.plants.each do |element| %>
+          <%= link_to plant_path(element), class:"card-user-plant" do %>
+              <img src= <%= element.image %> alt="plant">
+              <p><%= element.name %></p>
+          <% end %>
+      <% end %>
+  </div>
+
+  <div class='bottom-buttons'>
+    <%= link_to 'Add plant', plants_path(garden_id: @garden.id), class: 'btns white-btn btn-big' %>
+    <%= link_to 'Edit', edit_garden_path(@garden), class: 'btns white-btn' %>
+    <%= button_to 'Delete', @garden, method: :delete, class: 'btns white-btn' %>
+  </div>
+
 </div>
 
-<div class="card-garden-plant">
-    <% @garden.plants.each do |element| %>
-        <%= link_to plant_path(element), class:"card-user-plant" do %>
-            <img src= <%= element.image %> alt="plant">
-            <p><%= element.name %></p>
-        <% end %>
-    <% end %>
-</div>
-
-<div class='bottom-buttons'>
-  <%= link_to 'Edit', edit_garden_path(@garden), class: 'btns white-btn' %>
-  <%= button_to 'Delete', @garden, method: :delete, class: 'btns white-btn ms-4' %>
-</div>
-
-</div>
+<%# plants_path %>
+<%# new_garden_garden_plant_path(@garden) %>
