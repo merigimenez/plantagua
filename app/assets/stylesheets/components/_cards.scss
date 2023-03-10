@@ -22,10 +22,12 @@
 
   .green-btn {
     position: fixed;
-    bottom: 32px;
-    right: 32px;
+    bottom: 28px;
+    right: 28px;
     width: 44px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-size: 36px;
+    padding: 0;
   }
 
   a {
@@ -120,17 +122,33 @@
 
   p {
     margin: 0 5px;
+    font-size: 14px;
   }
 }
 
 .bottom-buttons {
   display: flex;
   margin-bottom: 10px;
+  position: fixed;
+  bottom: 0;
 
+  .btns {
+    width: 90px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-left: 10px;
+  }
+
+  .btn-big {
+    width: 124px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+    margin-right: 40px;
+  }
 }
 
+
+// search page
 .card-plant {
-  z-index: 1;
   display: flex;
   color: black;
   background-color: #F5f4f4;
@@ -139,6 +157,17 @@
   height: 120px;
   margin: 40px 40px 0 40px;
   align-items: center;
+
+  h2 {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 12px;
+  }
 
   img {
     z-index: 0;
@@ -153,5 +182,20 @@
     font-family: 'Gilroy-Light', sans-serif;
     font-size: 16px;
     font-weight: bold;
+  }
+}
+
+.card-plant-show {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  img {
+    position: absolute;
+    top: 144px;
+    left: 20px;
+    z-index: 1;
+    width: 188px;
+    height: 280px;
+    object-fit: cover;
   }
 }
