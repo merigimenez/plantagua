@@ -1,8 +1,10 @@
-<div>
 
+<div class="card-plant-show">
+  <img src=<%= @plant.image %> alt="plant image">
   <h2>Name: <%= @plant.name %></h2>
-  <p>Frequency: <%= @plant.frequency %></p>
-  <p>Last watered <strong><%= @plant.last_day - Date.today%></strong> days ago</p>
+  <p><%= @plant.scientific_name %></p>
+
+  <%# <p>Frequency: <%= @plant.frequency[:] </p>%>
 
   <%= link_to 'Add plant', new_garden_garden_plant_path(@garden, plant_id: params[:id]), class: 'btns white-btn btn-big' %>
 

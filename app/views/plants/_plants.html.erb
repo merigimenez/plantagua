@@ -4,7 +4,10 @@
         <%= link_to plant_path(plant, garden_id: params[:garden_id]) do %>
           <%= image_tag plant.image %>
         <% end %>
-        <h2 class="card-info"><%= plant.name %></h2>
+        <div class="card-info">
+          <h2><%= plant.name %></h2>
+          <p><%= plant.scientific_name %></p>
+        </div>
       </div>
     <% end %>
   </div>
