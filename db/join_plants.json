@@ -1,0 +1,340 @@
+{
+  "data": [
+  {
+    "id": 1,
+    "common_name": "Jade plant",
+    "scientific_name": "Crassula ovata",
+    "frequency": {
+      "january": 20,
+      "february": 20,
+      "march": 18,
+      "april": 16,
+      "may": 15,
+      "june": 12,
+      "july": 10,
+      "august": 10,
+      "september": 12,
+      "october": 15,
+      "november": 17,
+      "december": 20
+    },
+    "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSFRnmnj1agSqpYd4MaZcK5mh1Pp7eisI1QhA1x-QIigxitTCObNfleYRl_0m10Tobr71j41-FpvH1yzVQ",
+    "synonyms": ""
+  },
+  {
+    "id": 2,
+    "common_name": "Peace Lily",
+    "scientific_name": "Spathiphyllum wallisii",
+    "frequency": {
+      "january": 10,
+      "february": 10,
+      "march": 9,
+      "april": 8,
+      "may": 6,
+      "june": 5,
+      "july": 4,
+      "august": 4,
+      "september": 5,
+      "october": 6,
+      "november": 9,
+      "december": 10
+    },
+    "image": "https://plantsrescue.com/wp-content/uploads/2013/10/Spathiphyllum-wallisii.jpg",
+    "synonyms": ""
+  },
+  {
+    "id": 3,
+    "common_name": "Poinsettia",
+    "scientific_name": "Euphorbia pulcherrima",
+    "frequency": {
+      "january": 10,
+      "february": 10,
+      "march": 9,
+      "april": 8,
+      "may": 6,
+      "june": 5,
+      "july": 4,
+      "august": 4,
+      "september": 5,
+      "october": 6,
+      "november": 9,
+      "december": 10
+    },
+    "image": "https://t2.uc.ltmcdn.com/es/posts/5/0/6/como_cuidar_la_planta_de_navidad_16605_orig.jpg",
+    "synonyms": ""
+  },
+  {
+    "id": 4,
+    "common_name": "Flaming Katy",
+    "scientific_name": "Kalanchoe blossfeldiana",
+    "frequency": {
+      "january": 13,
+      "february": 13,
+      "march": 12,
+      "april": 11,
+      "may": 10,
+      "june": 8,
+      "july": 7,
+      "august": 7,
+      "september": 8,
+      "october": 10,
+      "november": 11,
+      "december": 13
+    },
+    "image": "https://www.cascadefloralwholesale.com/wp-content/uploads/2022/09/shutterstock_1788357869-1024x686.jpg",
+    "synonyms": "Christmas kalanchoe"
+  },
+  {
+    "id": 5,
+    "common_name": "Painter's-palette",
+    "scientific_name": "Anthurium andraeanum",
+    "frequency": {
+      "january": 13,
+      "february": 13,
+      "march": 12,
+      "april": 11,
+      "may": 10,
+      "june": 8,
+      "july": 7,
+      "august": 7,
+      "september": 8,
+      "october": 10,
+      "november": 11,
+      "december": 13
+    },
+    "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRemR3SjDjxeCAJssvJHDT_Vu41J54MTU7KG2qX2Rdy2Kwaq0Rk_hyAqpqo7bdTa1kLNCL7hwx7KT6GOLk",
+    "synonyms": "Flamingo Lily"
+  },
+  {
+    "id": 6,
+    "common_name": "Geranium",
+    "scientific_name": "Pelargonium zonale",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 6,
+      "may": 5,
+      "june": 4,
+      "july": 3,
+      "august": 3,
+      "september": 4,
+      "october": 5,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://www.provenwinners.com/sites/provenwinners.com/files/imagecache/500x500/ifa_upload/daredevilmulberry02.jpg",
+    "synonyms": "Zonal pelargonium"
+  },
+  {
+    "id": 7,
+    "common_name": "Rose",
+    "scientific_name": "Rosa rubiginosa",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 6,
+      "may": 5,
+      "june": 4,
+      "july": 3,
+      "august": 3,
+      "september": 4,
+      "october": 5,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://images.unsplash.com/photo-1596905904987-3dc12d4f0f33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHJvc2UlMjBmbG93ZXJ8ZW58MHx8MHx8&w=1000&q=80",
+    "synonyms": ""
+  },
+  {
+    "id": 8,
+    "common_name": "Peace Lily Vivaldi",
+    "scientific_name": "Spathiphyllum Vivaldi",
+    "frequency": {
+      "january": 10,
+      "february": 10,
+      "march": 9,
+      "april": 8,
+      "may": 6,
+      "june": 5,
+      "july": 4,
+      "august": 4,
+      "september": 5,
+      "october": 6,
+      "november": 9,
+      "december": 10
+    },
+    "image": "https://img.fruugo.com/product/5/44/301577445_max.jpg",
+    "synonyms": "White sails plant"
+  },
+  {
+    "id": 9,
+    "common_name": "Strawberry",
+    "scientific_name": "Fragaria × ananassa",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 5,
+      "may": 4,
+      "june": 3,
+      "july": 2,
+      "august": 2,
+      "september": 3,
+      "october": 4,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://bambooplants.ca/wp-content/uploads/2021/08/fragaria-ananassa-tristan-pink-flowered-strawberry.jpg",
+    "synonyms": ""
+  },
+  {
+    "id": 10,
+    "common_name": "Tomato",
+    "scientific_name": "Solanum lycopersicum",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 5,
+      "may": 4,
+      "june": 3,
+      "july": 2,
+      "august": 2,
+      "september": 3,
+      "october": 4,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://b7g9m5b6.stackpathcdn.com/media/cache/catalog_detail_image/26051-1.jpg",
+    "synonyms": ""
+  },
+  {
+    "id": 11,
+    "common_name": "Cherry Tomato",
+    "scientific_name": "Solanum lycopersicum var. cerasiforme",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 5,
+      "may": 4,
+      "june": 3,
+      "july": 2,
+      "august": 2,
+      "september": 3,
+      "october": 4,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://t2.uc.ltmcdn.com/es/posts/5/0/6/como_cuidar_la_planta_de_navidad_16605_orig.jpg",
+    "synonyms": ""
+  },
+  {
+    "id": 12,
+    "common_name": "Bell pepper",
+    "scientific_name": "Capsicum annuum",
+    "frequency": {
+      "january": 26,
+      "february": 26,
+      "march": 8,
+      "april": 7,
+      "may": 6,
+      "june": 5,
+      "july": 4,
+      "august": 4,
+      "september": 5,
+      "october": 6,
+      "november": 26,
+      "december": 26
+    },
+    "image": "https://s3.amazonaws.com/eit-planttoolbox-prod/media/images/Capsicum_annuum_Chil_zKV556hayUYW.jpe",
+    "synonyms": "Cayenne Pepper"
+  },
+  {
+    "id": 13,
+    "common_name": "Cavendish banana",
+    "scientific_name": "Musa acuminata",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 6,
+      "may": 5,
+      "june": 4,
+      "july": 3,
+      "august": 3,
+      "september": 4,
+      "october": 5,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://cdn.shopify.com/s/files/1/0321/2869/6455/products/Plataneracanaria-Musaacuminata2.jpg?v=1634038916",
+    "synonyms": ""
+  },
+  {
+    "id": 14,
+    "common_name": "Lettuce",
+    "scientific_name": "Lactuca sativa",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 5,
+      "may": 4,
+      "june": 3,
+      "july": 2,
+      "august": 2,
+      "september": 3,
+      "october": 4,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://www.picturethisai.com/wiki-image/1080/154117299366789153.jpeg",
+    "synonyms": ""
+  },
+  {
+    "id": 15,
+    "common_name": "Carrot",
+    "scientific_name": "Daucus carota ssp. sativus",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 6,
+      "may": 5,
+      "june": 4,
+      "july": 3,
+      "august": 3,
+      "september": 4,
+      "october": 5,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://www.picturethisai.com/wiki-image/1080/219431962216529920.jpeg",
+    "synonyms": ""
+  },
+  {
+    "id": 16,
+    "common_name": "Jalapeño Pepper",
+    "scientific_name": "Capsicum annuum 'Jalapeño'",
+    "frequency": {
+      "january": 26,
+      "february": 26,
+      "march": 8,
+      "april": 7,
+      "may": 6,
+      "june": 5,
+      "july": 4,
+      "august": 4,
+      "september": 5,
+      "october": 6,
+      "november": 26,
+      "december": 26
+    },
+    "image": "https://theoriginalgarden.com/Argazkiak/Fotos/Peques/20210225163617.jpg",
+    "synonyms": "Chili pepper"
+  }
+  ]
+}
