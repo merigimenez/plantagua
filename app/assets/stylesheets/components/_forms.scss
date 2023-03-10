@@ -29,20 +29,6 @@
       letter-spacing: 0.14em;
     }
   }
-  .form-control.is-valid:focus {
-    border-color: #2A4439;
-    box-shadow: none;
-  }
-  .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-    color: #2A4439;
-  }
-  .was-validated .form-control:valid, .form-control.is-valid, .form-select.is-valid{
-    border-color: #2A4439;
-    background-image: none;
-  }
-  .form-select.is-valid:not([multiple]):not([size]) {
-    background-image: none;
-  }
 }
 .form-on-white {
   display: flex;
@@ -78,6 +64,8 @@
       letter-spacing: 0.14em;
     }
   }
+}
+.simple_form {
   .form-control.is-valid:focus {
     border-color: #2A4439;
     box-shadow: none;
@@ -91,5 +79,8 @@
   }
   .form-select.is-valid:not([multiple]):not([size]) {
     background-image: none;
+  }
+  .was-validated .form-check-input:valid:checked, .form-check-input.is-valid:checked {
+    background-color: #2A4439;
   }
 }
