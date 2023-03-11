@@ -76,7 +76,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  // margin-bottom: 20px;
   position: sticky;
   top: 0;
   background-color: $background-green;
@@ -257,15 +257,10 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   background-image: linear-gradient(rgba(245, 245, 244, 0.3),rgba(245, 245, 244, 0.3)), url('https://i.pinimg.com/originals/44/d1/ef/44d1efed2e3e5b3a9d1f0d1537a1ec64.png');
   background-size: cover;
-  i {
-    margin: auto;
-    font-size: 32px;
-    color: $polina-white;
-  }
 }
 #edit-garden-icon {
   position: absolute;
   font-size: 20px;
-  bottom: 20px;
-  right: 25%;
+  bottom: 16px;
+  right: -36px;
 }

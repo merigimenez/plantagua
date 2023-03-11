@@ -2,10 +2,12 @@
 
   <div class="garden-main">
     <h1 class="header-top"><%= @garden.name %></h1>
-    <p><i class="fa-solid fa-location-dot"></i> <%= @garden.location %></p>
-    <%= link_to edit_garden_path(@garden), class: 'px-3' do%>
-      <i class="fa-solid fa-hammer" id = "edit-garden-icon"></i>
-    <% end %>
+    <div class="position-relative">
+      <p><i class="fa-solid fa-location-dot"></i> <%= @garden.location %></p>
+      <%= link_to edit_garden_path(@garden), id: "edit-garden-icon" do %>
+        <i class="fa-solid fa-hammer"></i>
+      <% end %>
+    </div>
   </div>
 
   <div class="card-garden-plant">
