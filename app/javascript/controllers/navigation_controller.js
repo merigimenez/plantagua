@@ -11,11 +11,16 @@ export default class extends Controller {
     event.preventDefault()
     this.menuTarget.classList.toggle("d-none")
     this.menuIconTarget.classList.toggle("visible-icon")
+    this.menuIconREALLYTarget.classList.toggle("fa-bars")
+    this.menuIconREALLYTarget.classList.toggle("fa-xmark")
   }
+
   closeNavigation(event) {
     if (!this.menuTarget.classList.contains("d-none") && event.target != this.menuIconREALLYTarget) {
       this.menuTarget.classList.add("d-none")
       this.menuIconTarget.classList.remove("visible-icon")
+      this.menuIconREALLYTarget.classList.toggle("fa-bars")
+      this.menuIconREALLYTarget.classList.toggle("fa-xmark")
     }
   }
 }

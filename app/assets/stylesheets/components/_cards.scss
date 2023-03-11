@@ -76,12 +76,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   position: sticky;
   top: 0;
   background-color: $background-green;
   width: 100%;
   z-index: 99;
+  color: #D4DAD7;
 }
 
 // plants wrapper
@@ -200,25 +201,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  img {
-    position: absolute;
-    top: 144px;
-    left: 20px;
-    z-index: 1;
-    width: 188px;
-    height: 280px;
-    object-fit: cover;
-  }
-  .white-border-card {
-    display: block;
-    position: absolute;
-    top: 123px;
-    left: 43px;
-    width: 180px;
-    height: 280px;
-    object-fit: cover;
-    border:1px solid $polina-white;
-  }
 }
 .card-plant-show-top {
   display: flex;
@@ -227,7 +209,7 @@
   height: 55%;
   img {
     position: absolute;
-    top: 31%;
+    top: 30%;
     left: 5%;
     z-index: 1;
     width: 51%;
@@ -262,4 +244,28 @@
     font-size: 16px;
     color: #ffffff;
   }
+}
+
+#card-add-plant-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 85px;
+  width: 85px;
+  margin: 5px 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-image: linear-gradient(rgba(245, 245, 244, 0.3),rgba(245, 245, 244, 0.3)), url('https://i.pinimg.com/originals/44/d1/ef/44d1efed2e3e5b3a9d1f0d1537a1ec64.png');
+  background-size: cover;
+  i {
+    margin: auto;
+    font-size: 32px;
+    color: $polina-white;
+  }
+}
+#edit-garden-icon {
+  position: absolute;
+  font-size: 20px;
+  bottom: 20px;
+  right: 25%;
 }
