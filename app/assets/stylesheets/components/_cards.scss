@@ -81,7 +81,7 @@
   top: 0;
   background-color: $background-green;
   width: 100%;
-  z-index: 100;
+  z-index: 99;
 }
 
 // plants wrapper
@@ -161,7 +161,7 @@
 // search page
 .card-plant {
   display: flex;
-  color: black;
+  color: #2A4439;
   background-color: #F5f4f4;
   // border: 0.7px solid black;
   border-radius: 5px;
@@ -200,39 +200,66 @@
   position: relative;
   width: 100%;
   height: 100%;
-
   img {
     position: absolute;
     top: 144px;
-    left: 30px;
+    left: 20px;
     z-index: 1;
     width: 188px;
     height: 280px;
     object-fit: cover;
   }
-
-  h2 {
+  .white-border-card {
+    display: block;
     position: absolute;
-    top: 470px;
-    left: 30px;
+    top: 123px;
+    left: 43px;
+    width: 180px;
+    height: 280px;
+    object-fit: cover;
+    border:1px solid $polina-white;
   }
-
-  #scientific_name {
+}
+.card-plant-show-top {
+  display: flex;
+  position:relative;
+  width: 100%;
+  height: 55%;
+  img {
     position: absolute;
-    top: 530px;
-    left: 30px;
+    top: 31%;
+    left: 5%;
+    z-index: 1;
+    width: 51%;
+    height: 61%;
+    object-fit: cover;
   }
-
-  #frequency {
+  .white-border-card {
+    display: block;
     position: absolute;
-    top: 570px;
-    left: 30px;
+    top: 26%;
+    left: 11%;
+    width: 49%;
+    height: 60%;
+    object-fit: cover;
+    border:1px solid $polina-white;
   }
-
-  .btns {
-    position: absolute;
-    top: 620px;
-    left: 140px;
+}
+.card-plant-show-bottom {
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  bottom: 0;
+  align-items: start;
+  justify-content:flex-start;
+  height: 45%;
+  width: 100%;
+  padding: 0 31px 60px 31px;
+  h1 {
+    font-size: 40px;
   }
-
+  h5 p{
+    font-size: 16px;
+    color: #ffffff;
+  }
 }
