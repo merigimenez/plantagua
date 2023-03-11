@@ -16,8 +16,6 @@ User.destroy_all
 Plant.destroy_all
 Garden.destroy_all
 
-
-
 puts 'Creating Plants'
 # trefle_token = '4oi05SBpTozWwS50K7L0z6JKu4RBmark17I-Qiq9gUg'
 # pages = (1..3) #(1..21_863)
@@ -36,7 +34,6 @@ puts 'Creating Plants'
     )
   end
 # end
-
 
 puts 'Creating users'
 user_gen = User.create(
@@ -57,11 +54,11 @@ user_ani = User.create(
 puts 'Creating gardens'
 garden_home= Garden.create(
   name: 'Home Garden',
-  location: 'Barcelona, Spain',
+  location: 'Barcelona, Spain'
 )
 garden_fruit = Garden.create(
   name: 'Fruit Garden',
-  location: 'Barcelona, Spain',
+  location: 'Barcelona, Spain'
 )
 
 
@@ -185,11 +182,11 @@ garden_plant = GardenPlant.create(
 puts 'Creating link 1 user_garden'
 garden_plant = UserGarden.create(
   garden_id: garden_home.id,
-  user_id: user_gen.id,
+  user_id: user_gen.id
 )
 
 puts 'Creating link 2 user_garden'
 garden_plant = UserGarden.create(
   garden_id: garden_home.id,
-  user_id: user_ani.id,
+  user_id: user_ani.id
 )
