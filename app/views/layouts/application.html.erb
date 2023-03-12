@@ -16,6 +16,7 @@
     <div class = "main-container <%= "container " unless set_background_class(params) == "leaves" ||set_background_class(params) == "white-solid" %>">
       <%= yield %>
     </div>
+     <%= render "shared/footer" %>
   </body>
 </html>
 <!--"white-hover" if controller_name == 'sessions') || ("white-solid" if 'users/edit')>
