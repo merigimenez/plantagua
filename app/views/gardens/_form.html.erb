@@ -8,6 +8,9 @@
     </div>
 
   <div>
-    <%= f.button :submit , class: 'btns white-btn'%>
+    <%= f.button :submit , class: 'btns white-btn mb-3'%>
+    <% if params['controller'] == 'gardens' && params["action"] == "edit" %>
+      <%= button_to 'Delete', @garden, method: :delete, class: "white-btn mb-3"%>
+    <% end %>
   </div>
 <% end %>

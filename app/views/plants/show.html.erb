@@ -1,11 +1,17 @@
-
 <div class="card-plant-show">
-  <img src=<%= @plant.image %> alt="plant image">
-  <h2><%= @plant.name %></h2>
-  <div class="">
-    <p id="scientific_name"><%= @plant.scientific_name %></p>
+  <div class="card-plant-show-top">
+    <img src=<%= @plant.image %> alt="plant image">
+    <div class = "white-border-card"></div>
+  </div>
+  <div class="card-plant-show-bottom">
+    <h1 class = "mb-3"><%= @plant.name %></h1>
+    <p>Taking care of plants requires attention and effort. You can find some general tips for plant care here.
+    <a href="https://www.bhg.com/search?q=<%= @plant.name %>"><i class="fa-solid fa-circle-info ms-2"></i></a>
+    </p>
+    <div class = "d-flex flex-row justify-content-start flex-wrap"><h5 class = "m-0 mb-3">Scientific_name : </h5><p class = "mb-3 ps-1"><%= @plant.scientific_name %></p></div>
     <% month = Date.today.strftime("%B") %>
-    <p id="frequency">Frequency: <strong><%= @plant.frequency[month.downcase] %></strong> days in <strong><%= month %></strong></p>
-    <%= link_to 'Add plant', new_garden_garden_plant_path(@garden, plant_id: params[:id]), class: 'btns white-btn btn-big' %>
+    <div class = "d-flex flex-row justify-content-start flex-wrap"><h5 class = "m-0 mb-3">Frequency :</h5><p class = "mb-3 ps-1"><%= @plant.frequency[month.downcase] %> days in <%= month %></p></div>
+    <!--div class = "d-flex flex-row justify-content-start flex-wrap"><h5 class = "m-0 mb-3">Light :</h5><p class = "mb-3 ps-1 mr-2">Requires direct light</p></div-->
+    <%= link_to 'add', new_garden_garden_plant_path(@garden, plant_id: params[:id]), class: 'btns white-btn-big position-absolute' %>
   </div>
 </div>

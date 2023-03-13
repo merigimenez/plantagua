@@ -1,29 +1,29 @@
 <div class="card-index">
 
   <div class="garden-main">
-    <p class = "mt-5 mb-1"><i class="fa-solid fa-location-dot"></i> <%= @garden.location %></p>
-    <h1 class="header-top mt-2"><%= @garden.name %></h1>
-    <div class = "d-flex flex-row">
-      <%= link_to plants_path(garden_id: @garden.id), class: 'px-3' do %>
-        <i class="fa-solid fa-plus"></i>
-      <% end %>
-      <%= button_to @garden, method: :delete, class: 'px-3' do %>
-        <i class="fa-solid fa-trash-can"></i>
-      <% end %>
-      <%= link_to edit_garden_path(@garden), class: 'px-3' do%>
-        <i class="fa-solid fa-wrench"></i>
+    <h1 class="header-top"><%= @garden.name %></h1>
+    <div class="position-relative">
+      <p><i class="fa-solid fa-location-dot"></i> <%= @garden.location %></p>
+      <%= link_to edit_garden_path(@garden), id: "edit-garden-icon" do %>
+        <i class="fa-solid fa-hammer"></i>
       <% end %>
     </div>
   </div>
 
   <div class="card-garden-plant">
-      <% @garden.plants.each do |element| %>
-          <%= link_to plant_path(element, garden_id: @garden.id), class:"card-user-plant" do %>
-              <img src= <%= element.image %> alt="plant">
-              <p><%= element.name %></p>
-              <div class="water"><p><i class="fa-solid fa-droplet"></i>1 day</p></div>
-          <% end %>
-      <% end %>
+    <%= link_to plants_path(garden_id: @garden.id) do %>
+      <div class = "card-user-plant">
+        <div id = "card-add-plant-image"><i class="fa-solid fa-plus"></i></div>
+        <p class="text-center">Add a new plant</p>
+      </div>
+    <% end %>
+    <% @garden.plants.each do |element| %>
+        <%= link_to plant_path(element, garden_id: @garden.id), class:"card-user-plant" do %>
+          <img src= <%= element.image %> alt="plant">
+          <p><%= element.name %></p>
+          <div class="water"><p><i class="fa-solid fa-droplet"></i>1 day</p></div>
+        <% end %>
+    <% end %>
   </div>
 
   <!--div class='bottom-buttons'>
