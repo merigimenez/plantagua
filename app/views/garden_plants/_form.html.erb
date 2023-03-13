@@ -5,8 +5,10 @@
     <div class="form">
       <%= f.input :name %>
       <%= f.input :garden_id, collection: %w[1 2] %>
-      <%# <%= f.input :photo %>
-      <%# <%= f.input :last_day %>
+      <%= f.input :photo, as: :file,
+                  hint: "Upload a plant image",
+                  required: false %>
+      <%= f.input :last_day %>
       <%= f.hidden_field :plant_id, value: params[:plant_id] %>
     </div>
 

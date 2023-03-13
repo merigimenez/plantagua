@@ -14,7 +14,7 @@
     <%= link_to plants_path(garden_id: @garden.id) do %>
       <div class = "card-user-plant">
         <div id = "card-add-plant-image"><i class="fa-solid fa-plus"></i></div>
-        <p class="text-center">Add a new plant</p>
+        <p class="text-center text-uppercase"><strong>Add a new plant</strong></p>
       </div>
     <% end %>
     <% @garden.plants.each do |element| %>
