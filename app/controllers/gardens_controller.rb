@@ -11,7 +11,7 @@ class GardensController < ApplicationController
       sql_query = "name ILIKE :query OR platform ILIKE :query"
       @gardens = Garden.where(sql_query, query: "%#{params[:query]}%")
     else
-      @gardens = Garden.all
+      @gardens = current_user.gardens
     end
   end
 
