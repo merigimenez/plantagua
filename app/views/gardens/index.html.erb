@@ -2,14 +2,6 @@
   <h1 class='header-top'>My Gardens</h1>
 
   <div class='card-white'>
-    <%= link_to new_garden_path, class:"card-garden" do %>
-      <div class = "card-add-garden-image">
-        <i class="fa-solid fa-plus"></i>
-      </div>
-      <div class="card-info align-self-center">
-        <h2 class = "text-center">Create a new garden</h2>
-      </div>
-    <% end %>
     <% @gardens.each do |element| %>
         <%= link_to garden_path(element), class:"card-garden" do %>
             <img src="https://e0.pxfuel.com/wallpapers/236/153/desktop-wallpaper-leaves-plant-green-dark-for-your-mobile-tablet-explore-plant-tropical-plant-plant-vs-zombies-jimmy-page-dark-leaves-aesthetic.jpg" alt="">
@@ -25,6 +17,6 @@
             </div>
         <% end %>
     <% end %>
+    <%= link_to "+", new_garden_path, class:'btns green-btn' %>
   </div>
-
 </div>
