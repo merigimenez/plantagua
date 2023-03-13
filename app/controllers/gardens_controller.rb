@@ -45,7 +45,7 @@ class GardensController < ApplicationController
   # Destroy a garden
   def destroy
     @garden.destroy
-    redirect_to user_path(current_user), status: :see_other #change to gardens index
+    redirect_to gardens_path, status: :see_other #change to gardens index
   end
 
   private
