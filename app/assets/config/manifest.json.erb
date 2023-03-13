@@ -1,0 +1,17 @@
+{
+  "background_color": "white",
+  "description": "Plantaqua is the best plant app to help you take care of them. Get custom notifications when your plants need you!",
+  "display": "fullscreen",
+  "name": "Plantaqua",
+  "icons": [
+    <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
+    <% files.each_with_index do |file, index| %>
+      <% match = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/) %>
+      {
+        "src": "<%= image_path "icons/#{file}" %>",
+        "sizes": "<%= match && match[:size] %>",
+        "type": "image/png"
+      }<%= "," unless (files.size - 1) == index %>
+    <% end %>
+  ]
+}
