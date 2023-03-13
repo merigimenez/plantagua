@@ -6,8 +6,8 @@
     <div class="form-inputs">
       <%= f.input :name %>
       <%= f.input :location %>
-      <%= simple_fields_for :users do |ff|  %>
-        <%= ff.input :email %>
+      <%= simple_fields_for :users do |ff|%>
+        <%= ff.input :email, label: "Add a friend to a garden", placeholder: 'friend@gmail.com'%>
       <% end %>
     </div>
   <div>
