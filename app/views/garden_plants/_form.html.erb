@@ -4,9 +4,11 @@
 
     <div class="form">
       <%= f.input :name %>
-      <%= f.input :last_day %>
       <%= f.input :outdoor %>
-      <%= f.input :photo %>
+      <%= f.input :photo, as: :file,
+                  hint: "Upload a plant image",
+                  required: false %>
+      <%= f.input :last_day %>
       <%= f.hidden_field :plant_id, value: params[:plant_id] %>
     </div>
 

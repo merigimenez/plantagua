@@ -1,4 +1,5 @@
 class GardenPlant < ApplicationRecord
+  has_many :notifications
   belongs_to :garden
   belongs_to :plant
 
