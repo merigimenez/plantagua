@@ -6,7 +6,10 @@
   margin: auto;
   align-items: center;
   justify-content: center;
-
+  .form-check-input:checked {
+    border-color: #ffffff;
+    background-color:#2A4439;
+  }
   .user_password {
     .form-text {
       margin-bottom:0;
@@ -39,7 +42,6 @@
   margin: auto;
   align-items: center;
   justify-content: center;
-
   a {
     text-decoration: none;
     color: #2A4439;

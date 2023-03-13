@@ -36,7 +36,15 @@ class GardensController < ApplicationController
 
   def update
     if @garden.update(garden_params)
-      redirect_to garden_path(@garden)
+      # raise
+      @friend = User.find_by(email: params[:users][:email])
+      if @friend
+        @user_garden = UserGarden.create!(user_id: @friend.id, garden_id: @garden.id)
+        redirect_to garden_path(@garden)
+      else
+        flash[:info] = "The user has not been found."
+        render "gardens/edit", status: :unprocessable_entity
+      end
     else
       render "gardens/edit", status: :unprocessable_entity
     end
@@ -57,5 +65,4 @@ class GardensController < ApplicationController
   def set_garden
     @garden = Garden.find(params[:id])
   end
-
 end

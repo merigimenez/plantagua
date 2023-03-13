@@ -62,7 +62,6 @@ garden_fruit = Garden.create(
   location: 'Barcelona, Spain'
 )
 
-
 puts 'Creating garden plants for garden 1'
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
