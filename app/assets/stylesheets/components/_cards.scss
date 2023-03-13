@@ -7,28 +7,44 @@
   width: 100%;
   position: relative;
 }
-
+.card-index-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #2A4439;
+  width: 100%;
+  z-index: 99;
+  color: #D4DAD7;
+}
 // gardens wrapper - white
 .card-white {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 75%;
+  min-height:75%;
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  position: sticky;
+  top: 25%;
   background-color: $polina-white;
+  padding-bottom:40px;
   border-radius: 25px 25px 0px 0px;
   a {
     text-decoration: none;
   }
-  .green-btn {
+  .circular-btn {
     position: fixed;
     bottom: 28px;
     right: 28px;
-    width: 44px;
+    background-color:#2A4439;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    font-size: 36px;
+    width: 44px;
+    height: 44px;
+    padding:7px 12px 5px 12px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
   }
 }
 
@@ -42,7 +58,6 @@
   height: 160px;
   margin: 40px 40px 0 40px;
   box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
-
   img {
     height:100%;
     width: 120px;

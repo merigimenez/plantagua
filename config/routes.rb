@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :garden_plants, only: %i[destroy edit update]
 
   resources :plants, only: %i[index show]
+  resources :notifications, only: %i[index]
+
 end
