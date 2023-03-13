@@ -179,14 +179,20 @@ garden_plant = GardenPlant.create(
 )
 
 
-puts 'Creating link 1 user_garden'
+puts 'Creating link 1 user_garden to home'
 garden_plant = UserGarden.create(
   garden_id: garden_home.id,
   user_id: user_gen.id
 )
 
-puts 'Creating link 2 user_garden'
+puts 'Creating link 2 user_garden to home'
 garden_plant = UserGarden.create(
   garden_id: garden_home.id,
   user_id: user_ani.id
+)
+
+puts 'Creating link 1 user_garden to fruit'
+garden_plant = UserGarden.create(
+  garden_id: garden_fruit.id,
+  user_id: user_gen.id
 )

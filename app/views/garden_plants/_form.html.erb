@@ -4,9 +4,9 @@
 
     <div class="form">
       <%= f.input :name %>
-      <%= f.input :garden_id, collection: %w[1 2] %>
-      <%# <%= f.input :photo %>
-      <%# <%= f.input :last_day %>
+      <%= f.input :last_day %>
+      <%= f.input :outdoor %>
+      <%= f.input :photo %>
       <%= f.hidden_field :plant_id, value: params[:plant_id] %>
     </div>
 
