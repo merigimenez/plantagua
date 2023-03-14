@@ -20,12 +20,13 @@ class GardenPlantsController < ApplicationController
   def create
     @garden_plant = GardenPlant.new(garden_plant_params)
     @garden_plant.garden = Garden.find(params[:garden_id])
+    @garden = Garden.find(params[:garden_id])
 
     if @garden_plant.save
       # @user_garden = UserGarden.create(user_id: current_user.id, garden_id: @garden.id)
       redirect_to garden_path(@garden_plant.garden) #goes into garden
     else
-      render "garden_plants/new", status: :unprocessable_entity
+      render "new", status: :unprocessable_entity
     end
   end
 
@@ -55,7 +56,7 @@ class GardenPlantsController < ApplicationController
   private
 
   def garden_plant_params
-    params.require(:garden_plant).permit(:name, :photo, :plant_id)
+    params.require(:garden_plant).permit(:name, :photo, :plant_id, :last_day)
   end
 
   def set_garden_plant

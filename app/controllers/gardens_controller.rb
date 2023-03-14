@@ -28,7 +28,9 @@ class GardensController < ApplicationController
   end
 
   # Show a garden
-  def show; end
+  def show
+    @plants = @garden.garden_plants.sort_by{ |element| ((element.last_day + element.plant.frequency[Date.today.strftime("%B").downcase]) - Date.today).to_i }
+  end
 
 
   # Edit a garden
