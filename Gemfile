@@ -84,3 +84,6 @@ end
 
 # mailing gem, faking emails
 gem 'letter_opener', group: :development
+
+# mailing
+gem 'dotenv-rails', groups: [:development, :test]

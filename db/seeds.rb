@@ -67,7 +67,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[0].id,
   name: Plant.all[0].name,
-  photo: Plant.all[0].image,
+  # photo: Plant.all[0].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -75,7 +75,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[1].id,
   name: Plant.all[1].name,
-  photo: Plant.all[1].image,
+  # photo: Plant.all[1].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -83,7 +83,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[2].id,
   name: Plant.all[2].name,
-  photo: Plant.all[2].image,
+  # photo: Plant.all[2].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -91,7 +91,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[3].id,
   name: Plant.all[3].name,
-  photo: Plant.all[3].image,
+  # photo: Plant.all[3].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -99,7 +99,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[4].id,
   name: Plant.all[4].name,
-  photo: Plant.all[4].image,
+  # photo: Plant.all[4].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -107,7 +107,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[5].id,
   name: Plant.all[5].name,
-  photo: Plant.all[5].image,
+  # photo: Plant.all[5].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -115,7 +115,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[6].id,
   name: Plant.all[6].name,
-  photo: Plant.all[6].image,
+  # photo: Plant.all[6].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -123,7 +123,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[7].id,
   name: Plant.all[7].name,
-  photo: Plant.all[7].image,
+  # photo: Plant.all[7].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -131,7 +131,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[8].id,
   name: Plant.all[8].name,
-  photo: Plant.all[8].image,
+  # photo: Plant.all[8].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -139,7 +139,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[9].id,
   name: Plant.all[9].name,
-  photo: Plant.all[9].image,
+  # photo: Plant.all[9].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -149,7 +149,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_fruit.id,
   plant_id: Plant.all[10].id,
   name: Plant.all[10].name,
-  photo: Plant.all[10].image,
+  # photo: Plant.all[10].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -157,7 +157,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_fruit.id,
   plant_id: Plant.all[11].id,
   name: Plant.all[11].name,
-  photo: Plant.all[11].image,
+  # photo: Plant.all[11].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -165,7 +165,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_fruit.id,
   plant_id: Plant.all[12].id,
   name: Plant.all[12].name,
-  photo: Plant.all[12].image,
+  # photo: Plant.all[12].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -173,7 +173,7 @@ garden_plant = GardenPlant.create(
   garden_id: garden_fruit.id,
   plant_id: Plant.all[13].id,
   name: Plant.all[13].name,
-  photo: Plant.all[13].image,
+  # photo: Plant.all[13].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
