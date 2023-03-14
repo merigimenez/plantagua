@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_113820) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_14_140809) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,12 +65,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_113820) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.integer "notification_type"
     t.bigint "user_id", null: false
-    t.bigint "garden_plant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["garden_plant_id"], name: "index_notifications_on_garden_plant_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
@@ -112,7 +109,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_113820) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "garden_plants", "gardens"
   add_foreign_key "garden_plants", "plants"
-  add_foreign_key "notifications", "garden_plants"
   add_foreign_key "notifications", "users"
   add_foreign_key "user_gardens", "gardens"
   add_foreign_key "user_gardens", "users"

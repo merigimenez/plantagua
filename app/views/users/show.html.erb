@@ -9,8 +9,8 @@
     <p><%= @user.email %></p>
     <div class = "profile-user-icons mt-4">
       <div class = "profile-user-icon"><i class="fa-solid fa-person-shelter"></i><%= @user.gardens.count %></div>
-      <div class = "profile-user-icon"><i class="fa-solid fa-seedling"></i></div>
-      <div class = "profile-user-icon"><i class="fa-solid fa-face-smile"></i>1</div>
+      <div class = "profile-user-icon"><i class="fa-solid fa-seedling"></i><%= @user.garden_plants.count %></div>
+      <div class = "profile-user-icon"><i class="fa-solid fa-face-smile"></i><%= UserGarden.select{|u| u.garden_id.in?(@user.gardens.ids) && u.user_id != @user.id}.uniq(&:user_id).count %></div>
     </div>
     <%= link_to "Edit", edit_user_registration_path, class: "btns green-btn mx-auto mt-4"%>
     <%= link_to "Delete an account", user_registration_path, data: {turbo_method: :delete}, class: "dropdown-item mt-3" %>

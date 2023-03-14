@@ -12,6 +12,18 @@ class ApplicationController < ActionController::Base
   end
 
   # ---previous page navigation--
+  # def render_404
+  #   respond_to do |format|
+  #     format.html { render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found }
+  #     format.xml  { head :not_found }
+  #     format.any  { head :not_found }
+  #   end
+  # end
+#
+  # def action
+  #   render_404 if params[:controller].blank?
+  #   # here the code that will never be executed
+  # end
 
   def after_sign_in_path_for(resource)
     user_path(current_user)

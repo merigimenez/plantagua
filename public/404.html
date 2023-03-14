@@ -21,9 +21,24 @@
       margin: auto;
     }
     .animation {
-      width: 150px;
-      height: 150px;
-      background: red;
+      width: 300px;
+      height: 300px;
+    }
+
+    .btns {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      font-size: 16px;
+      padding:16px;
+    }
+
+    .green-btn {
+      width: 170px;
+      background-color: #2A4439;
+      border-radius: 25px;
+      color: #F5F5F4;
+      text-align: center;
     }
   </style>
 </head>
@@ -32,9 +47,11 @@
   <div class = "dialog">
     <div class = "message404">
       <div class = "animation">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_1plcwvk5.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
       </div>
       <h1>The page you were looking for doesn't exist</h1>
-      <p>Go back home</p>
+      <a href = "https://www.plantaqua.me/" class = "btns green-btn">Go back home</a>
   </div>
 </body>
 </html>

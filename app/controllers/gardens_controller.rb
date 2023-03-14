@@ -28,7 +28,9 @@ class GardensController < ApplicationController
   end
 
   # Show a garden
-  def show; end
+  def show
+    @plants = @garden.garden_plants.sort_by{ |element| ((element.last_day + element.plant.frequency[Date.today.strftime("%B").downcase]) - Date.today).to_i }
+  end
 
 
   # Edit a garden
@@ -54,14 +56,6 @@ class GardensController < ApplicationController
   def destroy
     @garden.destroy
     redirect_to gardens_path, status: :see_other #change to gardens index
-  end
-
-  def count_plants(gardens)
-    plants = 0
-    gardens.each do |garden|
-      plants += garden.plants.count
-    end
-    return plants
   end
 
   private
