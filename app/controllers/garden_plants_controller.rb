@@ -1,6 +1,5 @@
 class GardenPlantsController < ApplicationController
   before_action :set_garden_plant, only: %i[show edit update destroy]
-
    # create a new plant
   def new
     @garden_plant = GardenPlant.new
@@ -31,7 +30,9 @@ class GardenPlantsController < ApplicationController
   end
 
   # Show a plant
-  def show; end
+  def show
+    @garden = Garden.find(params[:garden_id])
+  end
 
 
   # Edit a plant
@@ -39,7 +40,7 @@ class GardenPlantsController < ApplicationController
 
   def update
     if @garden_plant.update(garden_plant_params)
-      redirect_to garden_path(@garden)
+      redirect_to garden_path(@garden_plant.garden)
     else
       render "garden_plants/edit", status: :unprocessable_entity
     end
@@ -48,7 +49,7 @@ class GardenPlantsController < ApplicationController
   # Destroy a plant
   def destroy
     @garden_plant.destroy
-    redirect_to garden_path(@garden), status: :see_other #change to gardens index
+    redirect_to garden_path(@garden_plant.garden), status: :see_other #change to gardens index
   end
 
   private

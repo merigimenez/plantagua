@@ -14,12 +14,16 @@
     <%= link_to plants_path(garden_id: @garden.id) do %>
       <div class = "card-user-plant">
         <div id = "card-add-plant-image"><i class="fa-solid fa-plus"></i></div>
-        <p class="text-center">Add a new plant</p>
+        <p class="text-center text-uppercase"><strong>Add a new plant</strong></p>
       </div>
     <% end %>
-    <% @garden.plants.each do |element| %>
-        <%= link_to plant_path(element, garden_id: @garden.id), class:"card-user-plant" do %>
-          <img src= <%= element.image %> alt="plant">
+    <% @garden.garden_plants.each do |element| %>
+        <%= link_to garden_garden_plant_path(element, garden_id: @garden.id), class:"card-user-plant" do %>
+          <% if element.photo.key %>
+            <%= cl_image_tag element.photo.key, class: "object-fit-cover", crop: :fill %>
+          <% else %>
+            <img src= <%= element.plant.image %> alt="plant">
+          <% end %>
           <p><%= element.name %></p>
           <div class="water"><p><i class="fa-solid fa-droplet"></i>1 day</p></div>
         <% end %>

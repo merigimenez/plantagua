@@ -1,3 +1,4 @@
+<%= render "shared/flashes"%>
 <%= simple_form_for(@garden, html: {class: "form-on-green"}) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -5,12 +6,22 @@
     <div class="form-inputs">
       <%= f.input :name %>
       <%= f.input :location %>
+      <%= simple_fields_for :users do |ff|%>
+        <%= ff.input :email, label: "Add a friend to a garden", placeholder: 'friend@gmail.com'%>
+      <% end %>
     </div>
 
-  <div>
-    <%= f.button :submit , class: 'btns white-btn mb-3'%>
-    <% if params['controller'] == 'gardens' && params["action"] == "edit" %>
-      <%= button_to 'Delete', @garden, method: :delete, class: "white-btn mb-3"%>
-    <% end %>
-  </div>
+    <div>
+      <% if params['controller'] == 'gardens' && params['action'].in?(['edit','update'])%>
+        <%= f.button :submit , value: "Update", class: 'btns white-btn mb-3'%>
+      <% else %>
+        <%= f.button :submit , value: "Add", class: 'btns white-btn mb-3'%>
+      <% end %>
+    </div>
+<% end %>
+
+<% if params['controller'] == 'gardens' && params['action'].in?(['edit','update']) %>
+<div class= "form-extra-divs">
+  <%= button_to 'Delete', @garden, method: :delete, class: "white-btn"%>
+</div>
 <% end %>

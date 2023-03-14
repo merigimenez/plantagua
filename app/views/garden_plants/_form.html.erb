@@ -4,13 +4,26 @@
 
     <div class="form">
       <%= f.input :name %>
-      <%= f.input :garden_id, collection: %w[1 2] %>
-      <%# <%= f.input :photo %>
-      <%# <%= f.input :last_day %>
+      <%= f.input :photo, as: :file,
+                  hint: "Upload a plant image",
+                  required: false %>
+      <%= f.input :last_day %>
+      <%= f.input :outdoor ,class: "outdoorcheckbox" %>
       <%= f.hidden_field :plant_id, value: params[:plant_id] %>
     </div>
 
-  <div>
-    <%= f.button :submit , value: "Add", class: 'btns white-btn'%>
-  </div>
+    <div>
+      <% if params['controller'] == 'garden_plants' && params['action'].in?(['edit','update'])%>
+        <%= f.button :submit , value: "Update", class: 'btns white-btn'%>
+      <% else %>
+        <%= f.button :submit , value: "Add", class: 'btns white-btn'%>
+      <% end %>
+    </div>
+<% end %>
+
+
+<% if params['controller'] == 'garden_plants' && params['action'].in?(['edit','update']) %>
+<div class= "form-extra-divs">
+  <%= button_to 'Delete', @garden_plant, method: :delete, class: "white-btn"%>
+</div>
 <% end %>

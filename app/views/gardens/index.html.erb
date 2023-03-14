@@ -1,6 +1,7 @@
 <div class='card-index'>
-  <h1 class='header-top'>My Gardens</h1>
-
+  <div class = "card-index-top">
+    <h1 class='header-top'>My Gardens</h1>
+  </div>
   <div class='card-white'>
     <% @gardens.each do |element| %>
         <%= link_to garden_path(element), class:"card-garden" do %>
@@ -17,6 +18,8 @@
             </div>
         <% end %>
     <% end %>
-    <%= link_to "+", new_garden_path, class:'btns green-btn' %>
+    <%= link_to new_garden_path, class:'circular-btn' do %>
+      <i class="fa-solid fa-plus"></i>
+    <% end %>
   </div>
 </div>

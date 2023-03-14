@@ -15,6 +15,7 @@ GardenPlant.destroy_all
 User.destroy_all
 Plant.destroy_all
 Garden.destroy_all
+Notification.destroy_all
 
 puts 'Creating Plants'
 # trefle_token = '4oi05SBpTozWwS50K7L0z6JKu4RBmark17I-Qiq9gUg'
@@ -60,7 +61,6 @@ garden_fruit = Garden.create(
   name: 'Fruit Garden',
   location: 'Barcelona, Spain'
 )
-
 
 puts 'Creating garden plants for garden 1'
 garden_plant = GardenPlant.create(
@@ -178,15 +178,26 @@ garden_plant = GardenPlant.create(
   outdoor: [true, false].sample
 )
 
-
-puts 'Creating link 1 user_garden'
+puts 'Creating link 1 user_garden to home'
 garden_plant = UserGarden.create(
   garden_id: garden_home.id,
   user_id: user_gen.id
 )
 
-puts 'Creating link 2 user_garden'
+puts 'Creating link 2 user_garden to home'
 garden_plant = UserGarden.create(
   garden_id: garden_home.id,
   user_id: user_ani.id
+)
+
+puts 'Creating link 1 user_garden to fruit'
+garden_plant = UserGarden.create(
+  garden_id: garden_fruit.id,
+  user_id: user_gen.id
+)
+
+notification_first = Notification.create(
+  notification_type: 'watering',
+  user_id: User.first.id,
+  garden_plant_id: GardenPlant.first.id
 )
