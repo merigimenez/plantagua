@@ -56,14 +56,6 @@ class GardensController < ApplicationController
     redirect_to gardens_path, status: :see_other #change to gardens index
   end
 
-  def count_plants(gardens)
-    plants = 0
-    gardens.each do |garden|
-      plants += garden.plants.count
-    end
-    return plants
-  end
-
   private
 
   def garden_params

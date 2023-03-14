@@ -197,7 +197,6 @@ garden_plant = UserGarden.create(
 )
 
 notification_first = Notification.create(
-  notification_type: 'watering',
   user_id: User.first.id,
   garden_plant_id: GardenPlant.first.id
 )
