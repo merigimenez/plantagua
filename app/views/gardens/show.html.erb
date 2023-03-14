@@ -19,7 +19,11 @@
     <% end %>
     <% @garden.garden_plants.each do |element| %>
         <%= link_to garden_garden_plant_path(element, garden_id: @garden.id), class:"card-user-plant" do %>
-          <img src= <%= element.plant.image %> alt="plant">
+          <% if element.photo.key %>
+            <%= cl_image_tag element.photo.key, class: "object-fit-cover", crop: :fill %>
+          <% else %>
+            <img src= <%= element.plant.image %> alt="plant">
+          <% end %>
           <p><%= element.name %></p>
           <div class="water"><p><i class="fa-solid fa-droplet"></i>1 day</p></div>
         <% end %>

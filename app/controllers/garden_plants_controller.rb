@@ -1,6 +1,5 @@
 class GardenPlantsController < ApplicationController
   before_action :set_garden_plant, only: %i[show edit update destroy]
-
    # create a new plant
   def new
     @garden_plant = GardenPlant.new
