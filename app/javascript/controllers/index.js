@@ -13,4 +13,3 @@ application.register("search-plant", SearchPlantController)
 
 import NavigationController from "./navigation_controller"
 application.register("navigation", NavigationController)
-
