@@ -34,7 +34,6 @@ class GardenPlantsController < ApplicationController
     @garden = Garden.find(params[:garden_id])
   end
 
-
   # Edit a plant
   def edit; end
 
@@ -46,6 +45,11 @@ class GardenPlantsController < ApplicationController
     end
   end
 
+  # Update last_day watered
+  def update_watered
+
+  end
+
   # Destroy a plant
   def destroy
     @garden_plant.destroy
@@ -55,7 +59,7 @@ class GardenPlantsController < ApplicationController
   private
 
   def garden_plant_params
-    params.require(:garden_plant).permit(:name, :photo, :plant_id)
+    params.require(:garden_plant).permit(:name, :photo, :plant_id, :last_day)
   end
 
   def set_garden_plant
