@@ -198,5 +198,4 @@ garden_plant = UserGarden.create(
 
 notification_first = Notification.create(
   user_id: User.first.id,
-  garden_plant_id: GardenPlant.first.id
 )
