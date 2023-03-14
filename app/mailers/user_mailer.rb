@@ -6,15 +6,9 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.water.subject
   #
   def water
-    # This came by default
-    @plant_name = "plant_name"
-    # @plant = user.garden_plant.plant.name
-
-     # Instance variable => available in view
-
     @user = params[:user]
-    # @user = User.last
-    # array of plant to be watered
+    @plants = @user.garden_plants
+    # @plants = @user.plants_to_water
 
     # This will render a view in `app/views/user_mailer`!
     mail(to: @user.email, subject: 'Time to water your plant')

@@ -16,4 +16,29 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
   validates_presence_of :email, :full_name, :notification_time
+
+  # this method needs to happen every day
+  def plants_to_water
+    @plants_due = []
+
+    @user.garden.each do |garden|
+      garden.garden_plants.each do |element|
+        month = Date.today.strftime("%B")
+        water_date = (element.last_day + element.plant.frequency[month.downcase])
+        @plants_due << element if water_date == Date.today
+        # if water_date == Date.today
+        #   @plants << element
+        # else
+        #   @plants
+        # end
+      end
+    end
+
+    create_notification()
+  end
+
+  def create_notification
+    Notification.create(user: self.user) unless @plants_due.empty?
+  end
+
 end
