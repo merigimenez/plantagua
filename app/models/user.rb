@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   has_many :user_gardens
-  has_many :notifications
+  has_many :notifications, dependent: :destroy
   has_many :gardens, through: :user_gardens
   has_many :garden_plants, through: :gardens
 
