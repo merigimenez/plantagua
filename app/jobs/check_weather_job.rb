@@ -2,12 +2,12 @@ class CheckWeatherJob < ApplicationJob
   queue_as :default
 
   def perform(garden)
+    outdoor_plants = garden.garden_plants.where(outdoor: true)
+    return unless outdoor_plants.nil?
+
     rain = WeatherService.new(garden).call
-    garden_plants = garden.garden_plants
     return unless rain
 
-    garden_plants.each do |garden_plant|
-      garden_plant.update(last_day: Date.today) if garden_plant.outdoor
-    end
+    outdoor_plants.each { |plant| plant.update(last_day: Date.today) }
   end
 end
