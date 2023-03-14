@@ -24,4 +24,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:full_name, :notification_time, :photo)
   end
+
 end
