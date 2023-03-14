@@ -1,6 +1,10 @@
 <div class="card-plant-show">
   <div class="card-plant-show-top">
-    <img src=<%= @garden_plant.plant.image %> alt="plant image">
+    <% if @garden_plant.photo.key %>
+      <%= cl_image_tag @garden_plant.photo.key, crop: :fill %>
+    <% else %>
+      <img src=<%= @garden_plant.plant.image %> alt="plant image">
+    <% end %>
     <div class = "white-border-card"></div>
   </div>
   <div class="card-plant-show-bottom">

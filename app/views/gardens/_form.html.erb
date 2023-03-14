@@ -1,3 +1,4 @@
+<%= render "shared/flashes"%>
 <%= simple_form_for(@garden, html: {class: "form-on-green"}) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -5,6 +6,9 @@
     <div class="form-inputs">
       <%= f.input :name %>
       <%= f.input :location %>
+      <%= simple_fields_for :users do |ff|%>
+        <%= ff.input :email, label: "Add a friend to a garden", placeholder: 'friend@gmail.com'%>
+      <% end %>
     </div>
 
     <div>
