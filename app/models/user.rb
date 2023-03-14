@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :user_gardens
   has_many :notifications
   has_many :gardens, through: :user_gardens
+  has_many :garden_plants, through: :gardens
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
