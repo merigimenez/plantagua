@@ -7,16 +7,22 @@ class UserMailer < ApplicationMailer
   #
   def water
     # This came by default
-    @message = "Don't forget to water your plant today!"
-    # @plant = user.garden_plant
+    @plant_name = "plant_name"
+    # @plant = user.garden_plant.plant.name
 
      # Instance variable => available in view
 
-    # @user = params[:user]
-    @user = User.last
+    @user = params[:user]
+    # @user = User.last
+    # array of plant to be watered
 
     # This will render a view in `app/views/user_mailer`!
     mail(to: @user.email, subject: 'Time to water your plant')
   end
-
 end
+
+# UserMailer.with(user: User.first, discount: true)
+# # You can access these values inside user_mailer.rb
+# # with params[:user] and params[:discount]
+
+# UserMailer.with(user: User.first).water

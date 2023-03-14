@@ -7,11 +7,16 @@
       <%= f.input :location %>
     </div>
 
-  <div>
-    <%= f.button :submit , class: 'btns white-btn mb-3'%>
-  </div>
+    <div>
+      <% if params['controller'] == 'gardens' && params['action'].in?(['edit','update'])%>
+        <%= f.button :submit , value: "Update", class: 'btns white-btn mb-3'%>
+      <% else %>
+        <%= f.button :submit , value: "Add", class: 'btns white-btn mb-3'%>
+      <% end %>
+    </div>
 <% end %>
-<% if params['controller'] == 'gardens' && params["action"] == "edit" %>
+
+<% if params['controller'] == 'gardens' && params['action'].in?(['edit','update']) %>
 <div class= "form-extra-divs">
   <%= button_to 'Delete', @garden, method: :delete, class: "white-btn"%>
 </div>

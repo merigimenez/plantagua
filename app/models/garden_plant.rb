@@ -1,5 +1,5 @@
 class GardenPlant < ApplicationRecord
-  has_many :notifications
+  has_many :notifications, dependent: :destroy
   belongs_to :garden
   belongs_to :plant
 
