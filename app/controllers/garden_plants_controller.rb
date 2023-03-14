@@ -35,7 +35,6 @@ class GardenPlantsController < ApplicationController
     @garden = Garden.find(params[:garden_id])
   end
 
-
   # Edit a plant
   def edit; end
 
@@ -45,6 +44,11 @@ class GardenPlantsController < ApplicationController
     else
       render "garden_plants/edit", status: :unprocessable_entity
     end
+  end
+
+  # Update last_day watered
+  def update_watered
+
   end
 
   # Destroy a plant

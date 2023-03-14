@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
   # devise_for :users
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: "pages#home"
@@ -17,4 +18,7 @@ Rails.application.routes.draw do
   resources :plants, only: %i[index show]
   resources :notifications, only: %i[index]
 
+  authenticate :user, -> (user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
