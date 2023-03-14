@@ -21,7 +21,7 @@ class User < ApplicationRecord
   def plants_to_water
     @plants_due = []
 
-    @user.garden.each do |garden|
+    @user.gardens.each do |garden|
       garden.garden_plants.each do |element|
         month = Date.today.strftime("%B")
         water_date = (element.last_day + element.plant.frequency[month.downcase])
