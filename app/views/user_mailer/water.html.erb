@@ -1,7 +1,13 @@
-<h1>title</h1>
+<h1>Time to water!</h1>
 
 <p>Hi <%= @user.full_name %>,</p>
-<p>Don't forget to water your <%= @plant_name %> today!</p>
+<p>Don't forget to water your plants today:</p>
+<% @plants.each do |element| %>
+  <ul>
+    <li><%= element %></li>
+  </ul>
+<% end %>
+
 <p>Go into the app and let us know when it is done:</p>
 <p>https://www.plantaqua.me/</p>
 

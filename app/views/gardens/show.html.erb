@@ -25,7 +25,8 @@
             <img src= <%= element.plant.image %> alt="plant">
           <% end %>
           <p><%= element.name %></p>
-          <div class="water"><p><i class="fa-solid fa-droplet"></i>1 day</p></div>
+            <% month = Date.today.strftime("%B") %>
+            <i class="fa-solid fa-droplet"></i><%= ((element.last_day + element.plant.frequency[month.downcase]) - Date.today).to_i %><div class="startwateringscale"></div>
         <% end %>
     <% end %>
   </div>
