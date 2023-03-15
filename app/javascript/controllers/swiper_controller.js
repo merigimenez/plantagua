@@ -9,11 +9,11 @@ export default class extends Controller {
 
   connect() {
     console.log(this.gardenPlantIdValue)
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper(this.element, {
       speed: 400,
-      spaceBetween: 100,
+      loop: true,
       on: {
-        slideChange: () => {
+        slideChangeTransitionEnd: () => {
           console.log('CHANGED');
           const token = document.head.querySelector("[name='csrf-token']").content
           const url = `garden_plants/${this.gardenPlantIdValue}/water`
@@ -26,11 +26,9 @@ export default class extends Controller {
             }
           })
             .then((response) => response.json())
-            .then((json) => this.element.remove);
+            .then((json) => this.element.remove());
         },
       },
     });
   }
-
-
 }
