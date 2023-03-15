@@ -41,15 +41,17 @@ user_gen = User.create(
   email: 'genevievewarthon@gmail.com',
   password: '12345678',
   full_name: 'Genevieve Warthon',
-  notification_time: '19:00:00.00'
+  notification_time: '19:00:00.00',
+  admin: true
 )
 
 puts 'Creating users'
 user_ani = User.create(
   email: 'gimenezmarianae@gmail.com',
   password: '12345678',
-  full_name: 'Anais Warthon',
-  notification_time: '19:00:00.00'
+  full_name: 'Meri Gimenez',
+  notification_time: '19:00:00.00',
+  admin: true
 )
 
 puts 'Creating gardens'
@@ -197,5 +199,5 @@ garden_plant = UserGarden.create(
 )
 
 notification_first = Notification.create(
-  user_id: User.first.id,
+  user_id: User.first.id
 )

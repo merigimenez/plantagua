@@ -7,12 +7,15 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import NavigationController from "./navigation_controller"
+application.register("navigation", NavigationController)
 
 import SearchPlantController from "./search_plant_controller"
 application.register("search-plant", SearchPlantController)
 
-import NavigationController from "./navigation_controller"
-application.register("navigation", NavigationController)
-
 import FriendController from "./friend_controller"
 application.register("friend", FriendController)
+
+import SwiperController from "./swiper_controller"
+application.register("swiper", SwiperController)
+

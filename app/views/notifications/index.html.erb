@@ -1,7 +1,13 @@
 <h1 class = "header-top">Schedule</h1>
 
-<% @notifications.each do |element| %>
-  <% element.user.plants_to_water.each do |plant| %>
-    <%= plant.name %>
+  <% current_user.plants_to_water.each do |garden_plant| %>
+    <div class="swiper" data-controller="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <p><%= garden_plant_photo(garden_plant) %><%= garden_plant.name %></p>
+        </div>
+        <div class="swiper-slide">
+        </div>
+      </div>
+    </div>
   <% end %>
-<% end %>
