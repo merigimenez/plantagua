@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def water
     @user = params[:user]
-    @plants = @user.garden_plants
+    @plants = @user.plants_to_water
     # @plants = @user.plants_to_water
 
     # This will render a view in `app/views/user_mailer`!
