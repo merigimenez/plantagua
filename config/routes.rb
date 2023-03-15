@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     resources :garden_plants, only: %i[index show new create]
   end
 
-  resources :garden_plants, only: %i[destroy edit update]
+  resources :garden_plants, only: %i[destroy edit update] do
+    member do
+      patch :water
+    end
+  end
 
   resources :plants, only: %i[index show]
   resources :notifications, only: %i[index]

@@ -1,5 +1,5 @@
 class GardenPlantsController < ApplicationController
-  before_action :set_garden_plant, only: %i[show edit update destroy]
+  before_action :set_garden_plant, only: %i[show edit update destroy water]
    # create a new plant
   def new
     @garden_plant = GardenPlant.new
@@ -47,8 +47,13 @@ class GardenPlantsController < ApplicationController
   end
 
   # Update last_day watered
-  def update_watered
+  def water
+    @garden_plant.last_day = Date.today
+    @garden_plant.save
 
+    respond_to do |format|
+      format.json { render json: { success: true }.to_json }
+    end
   end
 
   # Destroy a plant
