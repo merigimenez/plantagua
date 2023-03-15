@@ -26,7 +26,9 @@
   align-items: center;
   min-height:75%;
   width: 100%;
-  position: sticky;
+  // position: sticky;
+  position: fixed;
+  bottom: 0;
   top: 25%;
   background-color: $polina-white;
   padding-bottom:40px;
@@ -46,6 +48,12 @@
     border-radius: 35px;
     font-size: 24px;
     line-height: 1.33;
+  }
+  p {
+    color: gray;
+  }
+  .all-gardens {
+    width: 320px;
   }
 }
 

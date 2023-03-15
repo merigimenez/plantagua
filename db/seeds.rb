@@ -17,6 +17,7 @@ Plant.destroy_all
 Garden.destroy_all
 Notification.destroy_all
 
+# PLANTS
 puts 'Creating Plants'
 # trefle_token = '4oi05SBpTozWwS50K7L0z6JKu4RBmark17I-Qiq9gUg'
 # pages = (1..3) #(1..21_863)
@@ -36,7 +37,8 @@ puts 'Creating Plants'
   end
 # end
 
-puts 'Creating users'
+# USERS
+puts 'Creating user Gen'
 user_gen = User.create(
   email: 'genevievewarthon@gmail.com',
   password: '12345678',
@@ -44,16 +46,24 @@ user_gen = User.create(
   notification_time: '19:00:00.00',
   admin: true
 )
-
-puts 'Creating users'
-user_ani = User.create(
+puts 'Creating user Meri'
+user_meri = User.create(
   email: 'gimenezmarianae@gmail.com',
   password: '12345678',
   full_name: 'Meri Gimenez',
   notification_time: '19:00:00.00',
   admin: true
 )
+puts 'Creating user Poli'
+user_poli = User.create(
+  email: 'polina2001sokolovas@gmail.com',
+  password: '12345678',
+  full_name: 'Polina Sokolova',
+  notification_time: '19:00:00.00',
+  admin: true
+)
 
+# GARDENS
 puts 'Creating gardens'
 garden_home= Garden.create(
   name: 'Home Garden',
@@ -64,12 +74,12 @@ garden_fruit = Garden.create(
   location: 'Barcelona, Spain'
 )
 
+# SEEDIING GARDENS: GARDEN_PLANTS
 puts 'Creating garden plants for garden 1'
 garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[0].id,
   name: Plant.all[0].name,
-  # photo: Plant.all[0].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -77,7 +87,6 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[1].id,
   name: Plant.all[1].name,
-  # photo: Plant.all[1].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -85,7 +94,6 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[2].id,
   name: Plant.all[2].name,
-  # photo: Plant.all[2].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -93,7 +101,6 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[3].id,
   name: Plant.all[3].name,
-  # photo: Plant.all[3].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -101,7 +108,6 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[4].id,
   name: Plant.all[4].name,
-  # photo: Plant.all[4].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -109,7 +115,6 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[5].id,
   name: Plant.all[5].name,
-  # photo: Plant.all[5].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -117,7 +122,6 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[6].id,
   name: Plant.all[6].name,
-  # photo: Plant.all[6].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -125,7 +129,6 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[7].id,
   name: Plant.all[7].name,
-  # photo: Plant.all[7].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -133,7 +136,6 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[8].id,
   name: Plant.all[8].name,
-  # photo: Plant.all[8].image,
   last_day: Date.today - rand(1..5),
   outdoor: [true, false].sample
 )
@@ -141,8 +143,15 @@ garden_plant = GardenPlant.create(
   garden_id: garden_home.id,
   plant_id: Plant.all[9].id,
   name: Plant.all[9].name,
-  # photo: Plant.all[9].image,
   last_day: Date.today - rand(1..5),
+  outdoor: [true, false].sample
+)
+# for notification test
+garden_plant = GardenPlant.create(
+  garden_id: garden_home.id,
+  plant_id: Plant.all[10].id,
+  name: Plant.all[10].name,
+  last_day: Date.today - Plant.all[10].frequency[Date.today.strftime("%B").downcase],
   outdoor: [true, false].sample
 )
 
@@ -180,16 +189,21 @@ garden_plant = GardenPlant.create(
   outdoor: [true, false].sample
 )
 
+# USER_GARDEN
 puts 'Creating link 1 user_garden to home'
 garden_plant = UserGarden.create(
   garden_id: garden_home.id,
   user_id: user_gen.id
 )
-
 puts 'Creating link 2 user_garden to home'
 garden_plant = UserGarden.create(
   garden_id: garden_home.id,
-  user_id: user_ani.id
+  user_id: user_meri.id
+)
+puts 'Creating link 3 user_garden to home'
+garden_plant = UserGarden.create(
+  garden_id: garden_home.id,
+  user_id: user_poli.id
 )
 
 puts 'Creating link 1 user_garden to fruit'
@@ -198,6 +212,7 @@ garden_plant = UserGarden.create(
   user_id: user_gen.id
 )
 
+# NOTIFICATION
 notification_first = Notification.create(
   user_id: User.first.id
 )
