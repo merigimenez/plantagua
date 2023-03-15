@@ -1,10 +1,17 @@
 <div class='card-index'>
+
   <div class = "card-index-top">
     <h1 class='header-top'>My Gardens</h1>
   </div>
+
   <div class='card-white'>
-    <% @gardens.each do |element| %>
-        <%= link_to garden_path(element), class:"card-garden" do %>
+
+    <div class='all-gardens'>
+      <% if @gardens.count == 0 %>
+          <p>No gardens</p>
+      <% else %>
+        <% @gardens.each do |element| %>
+          <%= link_to garden_path(element), class:"card-garden" do %>
             <img src="https://e0.pxfuel.com/wallpapers/236/153/desktop-wallpaper-leaves-plant-green-dark-for-your-mobile-tablet-explore-plant-tropical-plant-plant-vs-zombies-jimmy-page-dark-leaves-aesthetic.jpg" alt="">
             <div class="card-info">
               <h2><%= element.name %></h2>
@@ -16,10 +23,14 @@
                 <p><i class="fa-solid fa-user-group"></i> <%= element.users.count %></p>
               <% end %>
             </div>
+          <% end %>
         <% end %>
-    <% end %>
-    <%= link_to new_garden_path, class:'circular-btn' do %>
-      <i class="fa-solid fa-plus"></i>
-    <% end %>
+      <% end %>
+      <%= link_to new_garden_path, class:'circular-btn' do %>
+        <i class="fa-solid fa-plus"></i>
+      <% end %>
+    </div>
+
   </div>
+
 </div>
