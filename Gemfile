@@ -36,7 +36,7 @@ gem "jbuilder"
 
 gem "geocoder"
 gem 'timezone', '~> 1.3', '>= 1.3.21'
-gem "sidekiq"
+gem "sidekiq", "~> 6.5"
 gem "sidekiq-failures", "~> 1.0"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
