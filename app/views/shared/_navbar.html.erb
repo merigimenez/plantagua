@@ -1,11 +1,11 @@
 <div class='navbar-plantaqua'>
-  <% if params['controller'] == "users" && params['action'] == 'show' && :back != 'root_path'%>
-    <%= link_to user_session_path do %>
-        <h1><i class="fa-solid fa-arrow-left"></i></h1>
+  <% if !request.headers["HTTP_REFERER"].in?([new_user_registration_url, new_user_session_url, root_url])%>
+      <%= link_to 'javascript:history.back()' do %>
+      <h1><i class="fa-solid fa-arrow-left"></i></h1>
     <% end %>
   <% else %>
-    <%= link_to 'javascript:history.back()' do %>
-      <h1><i class="fa-solid fa-arrow-left"></i></h1>
+    <%= link_to user_session_path do %>
+        <h1><i class="fa-solid fa-arrow-left"></i></h1>
     <% end %>
   <% end %>
   <h1 data-action="click->navigation#display" data-navigation-target="menuIcon"
