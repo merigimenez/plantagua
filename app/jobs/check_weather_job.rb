@@ -3,11 +3,11 @@ class CheckWeatherJob < ApplicationJob
 
   def perform(garden)
     outdoor_plants = garden.garden_plants.where(outdoor: true)
-    return unless outdoor_plants.nil?
+    return if outdoor_plants.empty?
 
     rain = WeatherService.new(garden).call
     return unless rain
 
-    outdoor_plants.each { |plant| plant.update(last_day: Date.today) }
+    outdoor_plants.update_all(last_day: Date.today)
   end
 end
