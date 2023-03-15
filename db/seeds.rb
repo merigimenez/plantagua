@@ -49,7 +49,7 @@ puts 'Creating users'
 user_ani = User.create(
   email: 'gimenezmarianae@gmail.com',
   password: '12345678',
-  full_name: 'Mariana Gimenez',
+  full_name: 'Meri Gimenez',
   notification_time: '19:00:00.00',
   admin: true
 )
