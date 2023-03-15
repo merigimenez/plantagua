@@ -13,3 +13,6 @@ application.register("search-plant", SearchPlantController)
 
 import NavigationController from "./navigation_controller"
 application.register("navigation", NavigationController)
+
+import FriendController from "./friend_controller"
+application.register("friend", FriendController)

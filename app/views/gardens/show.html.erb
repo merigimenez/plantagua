@@ -1,13 +1,27 @@
-<div class="card-index">
-
+<div class="card-index" data-controller = "friend">
   <div class="garden-main">
+    <div class = "friends-list d-none" data-friend-target = "friendsCard">
+      <h2 class = "header-top text-center p-0 position-relative">Owners</h2><i class="fa-solid fa-xmark" data-action="click->friend#closingX"></i>
+      <div class = "d-flex flex-column">
+        <% @garden.users.each do |user| %>
+          <div class = "d-flex w-100 justify-content-between align-items-center my-2">
+            <%= user.full_name %>
+            <% if user.photo.key %>
+              <%= cl_image_tag user.photo.key, crop: :fill, class:"avatar" %>
+            <% else %>
+              <%= image_tag "User.svg.png", class:"avatar" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <h1 class="header-top"><%= @garden.name %></h1>
     <div class="garden-main-bar">
       <p><%= @garden.location %></p>
       <div>
-        <i class="fa-solid fa-user-group"></i>
+        <i class="fa-solid fa-user-group p-2" data-action="click->friend#displayFriends"></i>
         <%= link_to edit_garden_path(@garden), id: "edit-garden-icon" do %>
-          <i class="fa-solid fa-wrench ms-2"></i>
+          <i class="fa-solid fa-wrench ms-1"></i>
         <% end %>
       </div>
     </div>
@@ -16,9 +30,9 @@
     <% @plants.each do |element| %>
         <%= link_to garden_garden_plant_path(element, garden_id: @garden.id) do %>
           <% if element.photo.key %>
-            <div class="card-user-plant" style = "background-image: url('<%= cl_image_path element.photo.key, crop: :fill %>');">
+            <div class="card-user-plant" style = "background-image: linear-gradient(rgba(42, 68, 57, 0.3),rgba(42, 68, 57, 0.3)), url('<%= cl_image_path element.photo.key, crop: :fill %>');">
           <% else %>
-            <div class="card-user-plant" style = "background-image: url(<%= element.plant.image %>);">
+            <div class="card-user-plant" style = "background-image: linear-gradient(rgba(42, 68, 57, 0.3),rgba(42, 68, 57, 0.3)), url('<%= element.plant.image %>');">
           <% end %>
             <div class = "card-user-plant-bottom">
               <% month = Date.today.strftime("%B") %>
@@ -35,14 +49,15 @@
           </div>
         <% end %>
     <% end %>
+    <%= link_to plants_path(garden_id: @garden.id) do %>
+      <div class = "card-user-plant flex-column p-4" style = "background-image: linear-gradient(rgba(42, 68, 57, 0.3),rgba(42, 68, 57, 0.3)), url('https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?cs=srgb&dl=pexels-sohail-nachiti-807598.jpg&fm=jpg');">
+        <i class="fa-solid fa-plus m-auto"></i>
+        <p class="text-center text-uppercase"><strong>Add a new plant</strong></p>
+      </div>
+    <% end %>
   </div>
 </div>
 
+
 <%# plants_path %>
 <%# new_garden_garden_plant_path(@garden) %>
-<!--%= link_to plants_path(garden_id: @garden.id) do %>
-  <div class = "card-user-plant">
-    <div id = "card-add-plant-image"><i class="fa-solid fa-plus"></i></div>
-    <p class="text-center text-uppercase"><strong>Add a new plant</strong></p>
-  </div>
-<% end %-->
