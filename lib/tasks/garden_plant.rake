@@ -3,7 +3,7 @@ namespace :garden_plant do
   task update_all: :environment do
     gardens = Garden.all
     gardens.each do |garden|
-      CheckWeatherJob.perform_now(garden)
+      CheckWeatherJob.perform_later(garden)
     end
   end
 end

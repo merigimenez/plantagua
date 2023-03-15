@@ -7,5 +7,6 @@ class Garden < ApplicationRecord
 
   validates :name, presence: true
   validates :location, presence: true
+  validates :name, length: { maximum: 14 }
   after_validation :geocode, if: :will_save_change_to_location?
 end

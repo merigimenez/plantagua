@@ -38,18 +38,20 @@ puts 'Creating Plants'
 
 puts 'Creating users'
 user_gen = User.create(
-  email: 'genwarthon@gmail.com',
+  email: 'genevievewarthon@gmail.com',
   password: '12345678',
   full_name: 'Genevieve Warthon',
-  notification_time: '19:00:00.00'
+  notification_time: '19:00:00.00',
+  admin: true
 )
 
 puts 'Creating users'
 user_ani = User.create(
-  email: 'anaisw@gmail.com',
+  email: 'gimenezmarianae@gmail.com',
   password: '12345678',
-  full_name: 'Anais Warthon',
-  notification_time: '19:00:00.00'
+  full_name: 'Mariana Gimenez',
+  notification_time: '19:00:00.00',
+  admin: true
 )
 
 puts 'Creating gardens'

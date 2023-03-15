@@ -17,28 +17,27 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
   validates_presence_of :email, :full_name, :notification_time
 
-  # this method needs to happen every day
+  # refacto ro select (filter array)
   def plants_to_water
     @plants_due = []
 
-    @user.garden.each do |garden|
+    self.gardens.each do |garden|
       garden.garden_plants.each do |element|
         month = Date.today.strftime("%B")
         water_date = (element.last_day + element.plant.frequency[month.downcase])
         @plants_due << element if water_date == Date.today
-        # if water_date == Date.today
-        #   @plants << element
-        # else
-        #   @plants
-        # end
       end
     end
 
-    create_notification()
+    @plants_due
   end
 
+  # goes in job
   def create_notification
-    Notification.create(user: self.user) unless @plants_due.empty?
+    User.all.each do |element|
+      element.plants_to_water
+      Notification.create(user: element) unless @plants_due.empty?
+    end
   end
 
 end

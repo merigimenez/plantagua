@@ -1,0 +1,24 @@
+.wateringscale {
+  width: 80px;
+  background: none;
+  border-radius: 50px;
+  border:1px solid #2a4439;
+  height: 8px;
+  position: absolute;
+  bottom: 16px;
+  i {
+    position: absolute;
+    z-index: 3;
+    left: -5px;
+    bottom: -5px;
+    color:#052542;
+  }
+}
+
+.startwateringscale {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  background: linear-gradient(to right,#e0e7e8 0%, #47597E 100%);
+  border-radius: 50px;
+}

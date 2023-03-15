@@ -17,26 +17,22 @@
         <p class="text-center text-uppercase"><strong>Add a new plant</strong></p>
       </div>
     <% end %>
-    <% @garden.garden_plants.each do |element| %>
-        <%= link_to garden_garden_plant_path(element, garden_id: @garden.id), class:"card-user-plant" do %>
+    <% @plants.each do |element| %>
+        <%= link_to garden_garden_plant_path(element, garden_id: @garden.id), class:"card-user-plant text-center" do %>
           <% if element.photo.key %>
             <%= cl_image_tag element.photo.key, class: "object-fit-cover", crop: :fill %>
           <% else %>
             <img src= <%= element.plant.image %> alt="plant">
           <% end %>
-          <p><%= element.name %></p>
-            <% month = Date.today.strftime("%B") %>
-            <i class="fa-solid fa-droplet"></i><%= ((element.last_day + element.plant.frequency[month.downcase]) - Date.today).to_i %><div class="startwateringscale"></div>
+            <p><%= element.name %></p>
+            <div class="wateringscale">
+              <% month = Date.today.strftime("%B") %>
+              <%= days = ((element.last_day + element.plant.frequency[month.downcase]) - Date.today).to_i %>
+              <div class="startwateringscale" style="width:<%= days*100/element.plant.frequency[month.downcase] %>%; max-width: 100%;"></div>
+            </div>
         <% end %>
     <% end %>
   </div>
-
-  <!--div class='bottom-buttons'>
-    <%= link_to 'Add plant', plants_path(garden_id: @garden.id), class: 'btns white-btn btn-big' %>
-    <%= link_to 'Edit', edit_garden_path(@garden), class: 'btns white-btn' %>
-    <%= button_to 'Delete', @garden, method: :delete, class: 'btns white-btn' %>
-  </div-->
-
 </div>
 
 <%# plants_path %>
