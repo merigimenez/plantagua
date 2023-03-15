@@ -21,9 +21,16 @@
             <div class="card-user-plant" style = "background-image: url(<%= element.plant.image %>);">
           <% end %>
             <div class = "card-user-plant-bottom">
-              <div class = "px-3 align-self-end"><p><%= element.name %></p></div>
               <% month = Date.today.strftime("%B") %>
-              <div id = "watering"><p><%= days = ((element.last_day + element.plant.frequency[month.downcase]) - Date.today).to_i %><p></div>
+              <% days = ((element.last_day + element.plant.frequency[month.downcase]) - Date.today).to_i %>
+              <div class = "watering ps-3 align-self-end">
+                <% if days > 1 %>
+                  <p>In <%= days %> days<p>
+                <% else %>
+                  <p>Tomorrow <p>
+                <% end %>
+              </div>
+              <div class = "name px-3 align-self-start"><p><%= element.name %></p></div>
             </div>
           </div>
         <% end %>
