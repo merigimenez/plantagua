@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :plants, only: %i[index show]
   resources :notifications, only: %i[index]
 
-  authenticate :user do
+  authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
 

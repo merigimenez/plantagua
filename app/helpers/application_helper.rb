@@ -9,4 +9,12 @@ module ApplicationHelper
     end
     # raise
   end
+
+  def garden_plant_photo(garden_plant)
+    if garden_plant.photo?
+      return cl_image_tag garden_plant.photo.key
+    else
+      return image_tag garden_plant.plant.image
+    end
+  end
 end
