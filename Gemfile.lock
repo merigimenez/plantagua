@@ -236,6 +236,10 @@ GEM
       connection_pool (>= 2.2.5, < 3)
       rack (~> 2.0)
       redis (>= 4.5.0, < 5)
+
+    sidekiq-failures (1.0.4)
+      sidekiq (>= 4.0.0)
+
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -298,7 +302,12 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.2)
   sassc-rails
   selenium-webdriver
+
   sidekiq (~> 6.5, >= 6.5.7)
+
+  sidekiq (~> 6.5)
+  sidekiq-failures (~> 1.0)
+
   simple_form!
   sprockets-rails
   stimulus-rails
