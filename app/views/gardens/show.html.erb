@@ -2,34 +2,37 @@
 
   <div class="garden-main">
     <h1 class="header-top"><%= @garden.name %></h1>
-    <div class="position-relative">
-      <p><i class="fa-solid fa-location-dot"></i> <%= @garden.location %></p>
-      <%= link_to edit_garden_path(@garden), id: "edit-garden-icon" do %>
-        <i class="fa-solid fa-hammer"></i>
-      <% end %>
+    <div class="garden-main-bar">
+      <p><%= @garden.location %></p>
+      <div>
+        <i class="fa-solid fa-user-group"></i>
+        <%= link_to edit_garden_path(@garden), id: "edit-garden-icon" do %>
+          <i class="fa-solid fa-wrench ms-2"></i>
+        <% end %>
+      </div>
     </div>
   </div>
-
-  <div class="card-garden-plant">
-    <%= link_to plants_path(garden_id: @garden.id) do %>
-      <div class = "card-user-plant">
-        <div id = "card-add-plant-image"><i class="fa-solid fa-plus"></i></div>
-        <p class="text-center text-uppercase"><strong>Add a new plant</strong></p>
-      </div>
-    <% end %>
+  <div class="card-garden-plant my-2 px-4">
     <% @plants.each do |element| %>
-        <%= link_to garden_garden_plant_path(element, garden_id: @garden.id), class:"card-user-plant text-center" do %>
+        <%= link_to garden_garden_plant_path(element, garden_id: @garden.id) do %>
           <% if element.photo.key %>
-            <%= cl_image_tag element.photo.key, class: "object-fit-cover", crop: :fill %>
+            <div class="card-user-plant" style = "background-image: url('<%= cl_image_path element.photo.key, crop: :fill %>');">
           <% else %>
-            <img src= <%= element.plant.image %> alt="plant">
+            <div class="card-user-plant" style = "background-image: url(<%= element.plant.image %>);">
           <% end %>
-            <p><%= element.name %></p>
-            <div class="wateringscale">
+            <div class = "card-user-plant-bottom">
               <% month = Date.today.strftime("%B") %>
-              <%= days = ((element.last_day + element.plant.frequency[month.downcase]) - Date.today).to_i %>
-              <div class="startwateringscale" style="width:<%= days*100/element.plant.frequency[month.downcase] %>%; max-width: 100%;"></div>
+              <% days = ((element.last_day + element.plant.frequency[month.downcase]) - Date.today).to_i %>
+              <div class = "watering ps-3 align-self-end">
+                <% if days > 1 %>
+                  <p>In <%= days %> days<p>
+                <% else %>
+                  <p>Tomorrow <p>
+                <% end %>
+              </div>
+              <div class = "name px-3 align-self-start"><p><%= element.name %></p></div>
             </div>
+          </div>
         <% end %>
     <% end %>
   </div>
@@ -37,3 +40,9 @@
 
 <%# plants_path %>
 <%# new_garden_garden_plant_path(@garden) %>
+<!--%= link_to plants_path(garden_id: @garden.id) do %>
+  <div class = "card-user-plant">
+    <div id = "card-add-plant-image"><i class="fa-solid fa-plus"></i></div>
+    <p class="text-center text-uppercase"><strong>Add a new plant</strong></p>
+  </div>
+<% end %-->

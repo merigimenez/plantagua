@@ -28,6 +28,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'sidekiq', '~> 6.5', '>= 6.5.7'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -36,6 +38,7 @@ gem "jbuilder"
 
 gem "geocoder"
 gem 'timezone', '~> 1.3', '>= 1.3.21'
+
 gem "sidekiq", "~> 6.5"
 gem "sidekiq-failures", "~> 1.0"
 
