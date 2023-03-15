@@ -1,14 +1,19 @@
 import { Controller } from "@hotwired/stimulus"
 import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
 
 // Connects to data-controller="swiper"
 export default class extends Controller {
   connect() {
-    const swiper = new Swiper(
-      console.log("swiping")
-    )
-
+    console.log("test")
+    const swiper = new Swiper('.swiper', {
+      speed: 400,
+      spaceBetween: 100,
+      on: {
+        slideChange: function () {
+          console.log('CHANGED');
+        },
+      },
+    });
   }
 
 
