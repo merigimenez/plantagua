@@ -3,7 +3,10 @@
     <div class="swiper" data-controller="swiper" data-swiper-garden-plant-id-value=<%= garden_plant.id %>>
       <div class="swiper-wrapper">
         <div class="swiper-slide m-4" >
-          <p><%= garden_plant_photo(garden_plant) %><%= garden_plant.name %></p>
+          <div class="swipe-card d-flex">
+            <div><%= garden_plant_photo(garden_plant) %></div>
+            <div>Water <%= garden_plant.name %></div>
+          </div>
         </div>
         <div class="swiper-slide">
         </div>

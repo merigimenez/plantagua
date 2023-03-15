@@ -18,4 +18,3 @@ application.register("friend", FriendController)
 
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
-
