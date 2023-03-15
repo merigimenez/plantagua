@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       patch :water
     end
   end
+ 
+  resources :user_gardens, only: %i[destroy]
 
   resources :plants, only: %i[index show]
   resources :notifications, only: %i[index]
