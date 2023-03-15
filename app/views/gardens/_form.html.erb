@@ -20,6 +20,8 @@
 
 <% if params['controller'] == 'gardens' && params['action'].in?(['edit','update']) %>
 <div class= "form-extra-divs">
-  <%= button_to 'Delete', @garden, method: :delete, class: "white-btn"%>
+  <%= button_to 'Delete', @garden, method: :delete, class: "white-btn mb-3"%>
+  <% usergarden =  @garden.user_gardens.find_by(user_id: current_user.id)%>
+  <%= button_to 'Quit', user_garden_path(usergarden), method: :delete, class: "white-btn mb-3"%>
 </div>
 <% end %>

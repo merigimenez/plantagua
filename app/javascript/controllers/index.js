@@ -13,5 +13,9 @@ application.register("navigation", NavigationController)
 import SearchPlantController from "./search_plant_controller"
 application.register("search-plant", SearchPlantController)
 
+import FriendController from "./friend_controller"
+application.register("friend", FriendController)
+
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
+
