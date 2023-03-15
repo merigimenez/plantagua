@@ -1,5 +1,7 @@
 <h1 class = "header-top">Notifications</h1>
-<<<<<<< HEAD
-=======
-<%= @notifications.user_id %>
->>>>>>> master
+
+<% @notifications.each do |element| %>
+  <% element.user.plants_to_water.each do |plant| %>
+    <%= plant.name %>
+  <% end %>
+<% end %>
