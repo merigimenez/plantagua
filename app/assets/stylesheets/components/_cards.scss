@@ -33,6 +33,11 @@
   font-size: 44px !important;
 }
 
+.location {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .card-garden {
   display: flex;
   color: #2A4439;
