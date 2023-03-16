@@ -3,10 +3,16 @@
     <div class="swiper" data-controller="swiper" data-swiper-garden-plant-id-value=<%= garden_plant.id %>>
       <div class="swiper-wrapper">
         <div class="swiper-slide m-4" >
-          <div class="swipe-card d-flex">
+          <div class="swipe-card d-flex align-items-center">
+            <% month = Date.today.strftime("%B") %>
+            <% water_date = (garden_plant.last_day + garden_plant.plant.frequency[month.downcase]) %>
             <div><%= garden_plant_photo(garden_plant) %></div>
-            <div><%= garden_plant.name %></div>
-            <p></p>
+            <div>
+              <div><%= garden_plant.name %></div>
+              <% if water_date < Date.today %>
+                <p class="mb-0">Thirsty for <%= (Date.today - water_date).to_i %> days</p>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="swiper-slide">
