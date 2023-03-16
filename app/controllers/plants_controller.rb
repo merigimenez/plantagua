@@ -19,7 +19,6 @@ class PlantsController < ApplicationController
     @garden = Garden.find(params[:garden_id])
   end
 
-
   private
 
   def set_plant
