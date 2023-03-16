@@ -12,13 +12,13 @@
   </div>
 
   <%= simple_form_for [@chatroom, @message],
-    html: {data: {action: "turbo:submit-end->chatroom-subscription#resetForm"}, class: "d-flex send-bar"} do |f|
+    html: {data: {action: "turbo:submit-end->chatroom-subscription#resetForm"}, class: "d-flex send-bar w-100"} do |f|
   %>
     <%= f.input :content,
       label: false,
-      placeholder: "Message ##{@chatroom.name}",
-      wrapper_html: {class: "flex-grow-1"}
+      placeholder: "Message to ##{@chatroom.name}",
+      wrapper_html: {class: "search-form" }
     %>
-    <%= f.submit "Send", class: "btns green-btn" , id: "submit-btn"%>
+    <%= f.submit "Send", class: "btns" , id: "submit-btn"%>
   <% end %>
 </div>
