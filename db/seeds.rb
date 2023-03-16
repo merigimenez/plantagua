@@ -220,5 +220,5 @@ notification_first = Notification.create(
 
 # CHATROOM
 chatroom_first = Chatroom.create(
-  name: 'hello'
+  name: 'Plantqua'
 )
