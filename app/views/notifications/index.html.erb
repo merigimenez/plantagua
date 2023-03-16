@@ -1,10 +1,10 @@
 <h1 class = "header-top">Today's schedule</h1>
-<p class="swipe-p"> Swipe to water <i class="fa-solid fa-right-left"></i></p>
+<p class="swipe-p mb-4"> Swipe to water <i class="fa-solid fa-right-left"></i></p>
   <% current_user.plants_to_water.each do |garden_plant| %>
     <div class="swiper" data-controller="swiper" data-swiper-garden-plant-id-value=<%= garden_plant.id %>>
       <div class="swiper-wrapper">
-        <div class="swiper-slide m-4" >
-          <div class="swipe-card d-flex align-items-center">
+        <div class="swiper-slide mb-4 mx-4" >
+          <div class="swipe-card d-flex align-items-center p-1">
             <% month = Date.today.strftime("%B") %>
             <% water_date = (garden_plant.last_day + garden_plant.plant.frequency[month.downcase]) %>
             <div><%= garden_plant_photo(garden_plant) %></div>
