@@ -1,0 +1,16 @@
+<div id="message-<%= message.id %>">
+  <div class="d-flex justify-content-between">
+    <p class="small mb-1"><strong><%= message.user.full_name %></strong></p>
+    <p class="small mb-1 text-muted"><i><%= message.created_at.strftime("%e %b, %l:%M %p") %></i></p>
+  </div>
+  <div class="d-flex flex-row justify-content-start">
+    <% if message.user.photo.key %>
+      <%= cl_image_tag message.user.photo.key, crop: :fill, class:"avatar" %>
+    <% else %>
+      <%= image_tag "User.svg.png", class:"avatar" %>
+    <% end %>
+    <div>
+      <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;"><%= message.content %></p>
+    </div>
+  </div>
+</div>

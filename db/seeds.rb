@@ -16,6 +16,7 @@ User.destroy_all
 Plant.destroy_all
 Garden.destroy_all
 Notification.destroy_all
+Chatroom.destroy_all
 
 # PLANTS
 puts 'Creating Plants'
@@ -215,4 +216,9 @@ garden_plant = UserGarden.create(
 # NOTIFICATION
 notification_first = Notification.create(
   user_id: User.first.id
+)
+
+# CHATROOM
+chatroom_first = Chatroom.create(
+  name: 'Plantqua'
 )

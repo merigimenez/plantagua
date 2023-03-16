@@ -19,11 +19,14 @@ Rails.application.routes.draw do
       patch :water
     end
   end
- 
+
   resources :user_gardens, only: %i[destroy]
 
   resources :plants, only: %i[index show]
   resources :notifications, only: %i[index]
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
