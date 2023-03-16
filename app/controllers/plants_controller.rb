@@ -15,7 +15,9 @@ class PlantsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @garden = Garden.find(params[:garden_id])
+  end
 
   private
 
