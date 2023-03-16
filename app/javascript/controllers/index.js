@@ -4,6 +4,12 @@
 
 import { application } from "./application"
 
+import ChatroomSubscriptionController from "./chatroom_subscription_controller"
+application.register("chatroom-subscription", ChatroomSubscriptionController)
+
+import FriendController from "./friend_controller"
+application.register("friend", FriendController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
@@ -13,9 +19,5 @@ application.register("navigation", NavigationController)
 import SearchPlantController from "./search_plant_controller"
 application.register("search-plant", SearchPlantController)
 
-import FriendController from "./friend_controller"
-application.register("friend", FriendController)
-
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
-
