@@ -13,9 +13,9 @@
 
     <div>
       <% if params['controller'] == 'garden_plants' && params['action'].in?(['edit','update'])%>
-        <%= f.button :submit , value: "Update", class: 'btns white-btn mb-3'%>
+        <%= f.button :submit , value: "Update", class: 'btns white-btn mt-4'%>
       <% else %>
-        <%= f.button :submit , value: "Add", class: 'btns white-btn mb-3'%>
+        <%= f.button :submit , value: "Add", class: 'btns white-btn mt-4'%>
       <% end %>
     </div>
 <% end %>
@@ -23,6 +23,6 @@
 
 <% if params['controller'] == 'garden_plants' && params['action'].in?(['edit','update']) %>
 <div class= "form-extra-divs">
-  <%= button_to 'Delete', @garden_plant, method: :delete, class: "white-btn"%>
+  <%= button_to 'Delete', @garden_plant, method: :delete, class: "white-btn mt-4"%>
 </div>
 <% end %>

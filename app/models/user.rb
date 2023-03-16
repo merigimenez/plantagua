@@ -28,8 +28,6 @@ class User < ApplicationRecord
         plants_due << element if water_date <= Date.today
       end
     end
-
-    plants_due
+    plants_due.sort_by { |plant| plant.last_day }
   end
-
 end

@@ -335,6 +335,48 @@
     },
     "image": "https://theoriginalgarden.com/Argazkiak/Fotos/Peques/20210225163617.jpg",
     "synonyms": "Chili pepper"
+  },
+  {
+    "id": 17,
+    "common_name": "Basil",
+    "scientific_name": "Ocimum basilicum",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 5,
+      "may": 4,
+      "june": 3,
+      "july": 2,
+      "august": 2,
+      "september": 3,
+      "october": 4,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://www.gardeningknowhow.com/wp-content/uploads/2020/11/organic-basil.jpg",
+    "synonyms": "Genovese basil"
+  },
+  {
+    "id": 18,
+    "common_name": "Basil",
+    "scientific_name": "Ocimum basilicum",
+    "frequency": {
+      "january": 7,
+      "february": 7,
+      "march": 6,
+      "april": 5,
+      "may": 4,
+      "june": 3,
+      "july": 2,
+      "august": 2,
+      "september": 3,
+      "october": 4,
+      "november": 6,
+      "december": 7
+    },
+    "image": "https://www.gardeningknowhow.com/wp-content/uploads/2020/11/organic-basil.jpg",
+    "synonyms": "Genovese basil"
   }
   ]
 }
