@@ -1,4 +1,4 @@
-<div id="message-<%= message.id %>" class = "message mb-3">
+<div id="message-<%= message.id %>" class = "message mb-3" style = "<%= message.sender?(current_user) ? 'margin-left:20%; border-radius: 25px 0 0 25px;' : ' border-radius: 0 25px 25px 0;'%>">
   <div class="d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start'%>">
     <p class="small mb-1"><strong><%= message.user.full_name %></strong></p>
     <p class="small mb-1 text-muted ps-2"><i><%= message.created_at.strftime("%e %b, %l:%M %p") %></i></p>
