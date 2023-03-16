@@ -37,6 +37,9 @@
   .form-inputs {
     font-family: 'Gilroy-Light';
     letter-spacing: 0.14em;
+    #garden_plant_last_day_1i {
+      display: none;
+    }
     input, select {
       background-color: #f5f5f4;
       border-radius: 4px;
@@ -104,5 +107,7 @@
   width: 80%;
   input {
     border-radius: 25px;
+    height: 40px;
+    padding: 0 10px;
   }
 }

@@ -9,15 +9,15 @@
         <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7; overflow-wrap: break-word;width: 80%;"><%= message.content %></p>
       </div>
       <% if message.user.photo.key %>
-        <%= cl_image_tag message.user.photo.key, crop: :fill, class:"avatar m-auto" %>
+        <%= cl_image_tag message.user.photo.key, crop: :fill, class:"avatar mx-auto" %>
       <% else %>
-        <%= image_tag "User.svg.png", class:"avatar m-auto" %>
+        <%= image_tag "User.svg.png", class:"avatar mx-auto" %>
       <% end %>
     <% else %>
       <% if message.user.photo.key %>
-        <%= cl_image_tag message.user.photo.key, crop: :fill, class:"avatar m-auto" %>
+        <%= cl_image_tag message.user.photo.key, crop: :fill, class:"avatar mx-auto" %>
       <% else %>
-        <%= image_tag "User.svg.png", class:"avatar avatar m-auto" %>
+        <%= image_tag "User.svg.png", class:"avatar avatar mx-auto" %>
       <% end %>
       <div class = "content">
         <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7; overflow-wrap: break-word;width: 80%;"><%= message.content %></p>
