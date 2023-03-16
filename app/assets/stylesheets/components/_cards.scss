@@ -52,9 +52,12 @@
   p {
     color: gray;
   }
-  .all-gardens {
-    width: 320px;
-  }
+}
+
+.black-text {
+  color: #2A4439 !important;
+  font-size: 44px !important;
+  padding-top: 10px;
 }
 
 // garden
@@ -76,7 +79,7 @@
 
   .card-info {
     padding: 16px;
-    width: 200px;
+    width: 100%;
 
     h2 {
       font-family: 'Gilroy-Light', sans-serif;
@@ -128,6 +131,25 @@
     margin: 0;
   }
 }
+
+.garden-main-e {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background-color: $polina-white;
+  width: 100%;
+  z-index: 99;
+  color: #2A4439;
+  .header-top {
+    width: 100%;
+    padding:100px 30px 10px 30px;
+    margin: 0;
+  }
+}
+
 .garden-main-bar {
   width: 100%;
   display: flex;
