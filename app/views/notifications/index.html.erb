@@ -9,7 +9,7 @@
             <% water_date = (garden_plant.last_day + garden_plant.plant.frequency[month.downcase]) %>
             <div><%= garden_plant_photo(garden_plant) %></div>
             <div>
-              <div><strong><%= garden_plant.name.capitalize! %></strong></div>
+              <div><strong><%= garden_plant_name(garden_plant) %></strong></div>
               <% if water_date < Date.today %>
                 <p class="mb-0">Thirsty for <%= (Date.today - water_date).to_i %> days <i class="fa-solid fa-triangle-exclamation"></i></p>
               <% else %>
