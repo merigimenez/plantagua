@@ -8,7 +8,10 @@
 
     <div class='all-gardens'>
       <% if @gardens.count == 0 %>
+        <div>
           <p>No gardens</p>
+          <p>Click the add button to begin!</p>
+        </div>
       <% else %>
         <% @gardens.each do |element| %>
           <%= link_to garden_path(element), class:"card-garden" do %>
