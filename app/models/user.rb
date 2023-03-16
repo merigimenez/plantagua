@@ -25,7 +25,7 @@ class User < ApplicationRecord
       garden.garden_plants.each do |element|
         month = Date.today.strftime("%B")
         water_date = (element.last_day + element.plant.frequency[month.downcase])
-        plants_due << element if water_date == Date.today
+        plants_due << element if water_date <= Date.today
       end
     end
 
