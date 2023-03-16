@@ -54,9 +54,14 @@
         <% end %>
     <% end %>
     <%= link_to plants_path(garden_id: @garden.id) do %>
-      <div class = "card-user-plant flex-column p-4" style = "background-image: linear-gradient(rgba(42, 68, 57, 0.3),rgba(42, 68, 57, 0.3)), url('https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?cs=srgb&dl=pexels-sohail-nachiti-807598.jpg&fm=jpg');">
+      <div id = "card-add-plant" class = "card-user-plant flex-column" style = "background-image: linear-gradient(rgba(42, 68, 57, 0.3),rgba(42, 68, 57, 0.3)), url('https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?cs=srgb&dl=pexels-sohail-nachiti-807598.jpg&fm=jpg');">
         <i class="fa-solid fa-plus m-auto"></i>
-        <p class="text-center text-uppercase"><strong>Add a new plant</strong></p>
+        <div class = "card-user-plant-bottom w-100  align-items-end">
+          <div class = "watering ps-3 align-self-end">
+            <p class="text-center m-0">Add</p>
+          </div>
+          <div class = "name px-3 align-self-start"><p>New Plant</p></div>
+        </div>
       </div>
     <% end %>
   </div>
