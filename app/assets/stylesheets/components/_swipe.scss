@@ -7,17 +7,22 @@
   }
 
 .swipe-card {
-  border-radius: 10px;
-  background-color: rgba(245, 245, 244, 0.3);
-  // border:1px solid $polina-white ;
+  border-radius: 15px;
+  background-color: $polina-white;
+  opacity: 0.7;
   align-items: center;
   width: 85%;
   margin-bottom: 0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #2A4439;
 }
 
 .swiper-slide p {
-  font-size: 12px;
+  font-size: 14px;
   color: #2A4439;
   font-weight: 600;
+}
+
+.swipe-p {
+  text-align: center;
 }
