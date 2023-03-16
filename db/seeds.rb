@@ -12,11 +12,12 @@ require 'json'
 puts 'Cleaning Database'
 UserGarden.destroy_all
 GardenPlant.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 Plant.destroy_all
 Garden.destroy_all
 Notification.destroy_all
-Chatroom.destroy_all
+
 
 # PLANTS
 puts 'Creating Plants'
@@ -220,5 +221,5 @@ notification_first = Notification.create(
 
 # CHATROOM
 chatroom_first = Chatroom.create(
-  name: 'Plantqua'
+  name: 'Plantaqua'
 )
