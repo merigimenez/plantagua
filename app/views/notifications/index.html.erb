@@ -1,4 +1,5 @@
-<h1 class = "header-top">Schedule</h1>
+<h1 class = "header-top">Today's schedule</h1>
+<p class="swipe-p"> Swipe to water <i class="fa-solid fa-right-left"></i></p>
   <% current_user.plants_to_water.each do |garden_plant| %>
     <div class="swiper" data-controller="swiper" data-swiper-garden-plant-id-value=<%= garden_plant.id %>>
       <div class="swiper-wrapper">
@@ -8,9 +9,11 @@
             <% water_date = (garden_plant.last_day + garden_plant.plant.frequency[month.downcase]) %>
             <div><%= garden_plant_photo(garden_plant) %></div>
             <div>
-              <div><%= garden_plant.name %></div>
+              <div><strong><%= garden_plant.name.capitalize! %></strong></div>
               <% if water_date < Date.today %>
-                <p class="mb-0">Thirsty for <%= (Date.today - water_date).to_i %> days</p>
+                <p class="mb-0">Thirsty for <%= (Date.today - water_date).to_i %> days <i class="fa-solid fa-triangle-exclamation"></i></p>
+              <% else %>
+                <p class="mb-0">Due today</p>
               <% end %>
             </div>
           </div>
