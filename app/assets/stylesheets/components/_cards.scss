@@ -1,3 +1,75 @@
+//gardens-index
+.card-white {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height:75%;
+  width: 100%;
+  top: 25%;
+  padding-bottom:40px;
+  a {
+    text-decoration: none;
+  }
+  .circular-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background-color:#2A4439;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 48px;
+    height: 48px;
+    padding:10px 10px 5px 14px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+  }
+  p {
+    color: gray;
+  }
+}
+
+.black-text {
+  color: #2A4439 !important;
+  font-size: 44px !important;
+}
+
+.card-garden {
+  display: flex;
+  color: #2A4439;
+  background-color: $polina-white;
+  border: 0.7px solid #2A4439;
+  border-radius: 25px;
+  height: 160px;
+  width: 342px;
+  margin-bottom: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  img {
+    height:100%;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 25px 0 0 25px;
+  }
+
+  .card-info {
+    padding: 16px;
+    width: 222px;
+    h2 {
+      font-family: 'Gilroy-Light', sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+
+
 // cards wrapper
 .card-index {
   display: flex;
@@ -19,81 +91,8 @@
   color: #D4DAD7;
 }
 
-// gardens wrapper - white
-.card-white {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height:75%;
-  width: 100%;
-  // position: sticky;
-  position: fixed;
-  bottom: 0;
-  top: 25%;
-  background-color: $polina-white;
-  padding-bottom:40px;
-  border-radius: 25px 25px 0px 0px;
-  a {
-    text-decoration: none;
-  }
-  .circular-btn {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    background-color:#2A4439;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    width: 44px;
-    height: 44px;
-    padding:7px 12px 5px 12px;
-    border-radius: 35px;
-    font-size: 24px;
-    line-height: 1.33;
-  }
-  p {
-    color: gray;
-  }
-}
-
-.black-text {
-  color: #2A4439 !important;
-  font-size: 44px !important;
-  padding-top: 10px;
-}
 
 // garden
-.card-garden {
-  display: flex;
-  color: #2A4439;
-  background-color: $polina-white;
-  border: 0.7px solid #2A4439;;
-  border-radius: 25px;
-  height: 160px;
-  margin: 40px 40px 0 40px;
-  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
-  img {
-    height:100%;
-    width: 120px;
-    object-fit: cover;
-    border-radius: 25px 0 0 25px;
-  }
-
-  .card-info {
-    padding: 16px;
-    width: 100%;
-
-    h2 {
-      font-family: 'Gilroy-Light', sans-serif;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    p {
-      margin: 0;
-    }
-  }
-}
-
 .card-add-garden-image {
   display: flex;
   background-image: linear-gradient(rgba(42, 68, 57, 0.5),rgba(42, 68, 57, 0.5)), url('https://f.site-cdn.net/ec4eed27c5/1200-800-social.jpg');
@@ -123,6 +122,7 @@
   top: 0;
   background-color: $polina-white;
   width: 100%;
+  height: 204px;
   z-index: 99;
   color: #2A4439;
   .header-top {
