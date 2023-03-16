@@ -45,8 +45,19 @@ button, .btn-fix {
 #trash {
   background-color: none;
 }
-
+.search-form {
+  input {
+    // width: 80%;
+    border-radius: 25px;
+  }
+}
 #submit-btn {
-  width: 100px;
-  height: 40px;
+  color:#2A4439;
+  font-weight: bold;
+  border: none;
+  background: none;
+  font-size: 20px;
+  height: 37.6px;
+  margin-bottom: 1rem;
+  padding:0;
 }
