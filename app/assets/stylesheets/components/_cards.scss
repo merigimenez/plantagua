@@ -1,3 +1,80 @@
+//gardens-index
+.card-white {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height:75%;
+  width: 100%;
+  top: 25%;
+  padding-bottom:40px;
+  a {
+    text-decoration: none;
+  }
+  .circular-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background-color:#2A4439;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 48px;
+    height: 48px;
+    padding:10px 10px 5px 14px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+  }
+  p {
+    color: gray;
+  }
+}
+
+.black-text {
+  color: #2A4439 !important;
+  font-size: 44px !important;
+}
+
+.location {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.card-garden {
+  display: flex;
+  color: #2A4439;
+  background-color: $polina-white;
+  border: 0.7px solid #2A4439;
+  border-radius: 25px;
+  height: 160px;
+  width: 342px;
+  margin-bottom: 40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  img {
+    height:100%;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 25px 0 0 25px;
+  }
+
+  .card-info {
+    padding: 16px;
+    width: 222px;
+    h2 {
+      font-family: 'Gilroy-Light', sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+
+
 // cards wrapper
 .card-index {
   display: flex;
@@ -19,81 +96,8 @@
   color: #D4DAD7;
 }
 
-// gardens wrapper - white
-.card-white {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height:75%;
-  width: 100%;
-  // position: sticky;
-  position: fixed;
-  bottom: 0;
-  top: 25%;
-  background-color: $polina-white;
-  padding-bottom:40px;
-  border-radius: 25px 25px 0px 0px;
-  a {
-    text-decoration: none;
-  }
-  .circular-btn {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    background-color:#2A4439;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    width: 44px;
-    height: 44px;
-    padding:7px 12px 5px 12px;
-    border-radius: 35px;
-    font-size: 24px;
-    line-height: 1.33;
-  }
-  p {
-    color: gray;
-  }
-}
-
-.black-text {
-  color: #2A4439 !important;
-  font-size: 44px !important;
-  padding-top: 10px;
-}
 
 // garden
-.card-garden {
-  display: flex;
-  color: #2A4439;
-  background-color: $polina-white;
-  border: 0.7px solid #2A4439;;
-  border-radius: 25px;
-  height: 160px;
-  margin: 40px 40px 0 40px;
-  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
-  img {
-    height:100%;
-    width: 120px;
-    object-fit: cover;
-    border-radius: 25px 0 0 25px;
-  }
-
-  .card-info {
-    padding: 16px;
-    width: 100%;
-
-    h2 {
-      font-family: 'Gilroy-Light', sans-serif;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    p {
-      margin: 0;
-    }
-  }
-}
-
 .card-add-garden-image {
   display: flex;
   background-image: linear-gradient(rgba(42, 68, 57, 0.5),rgba(42, 68, 57, 0.5)), url('https://f.site-cdn.net/ec4eed27c5/1200-800-social.jpg');
@@ -123,6 +127,7 @@
   top: 0;
   background-color: $polina-white;
   width: 100%;
+  height: 204px;
   z-index: 99;
   color: #2A4439;
   .header-top {
@@ -132,17 +137,17 @@
   }
 }
 
-.garden-main-e {
+.garden-main-green {
   display: flex;
   flex-direction: column;
   align-items: center;
   // margin-bottom: 20px;
   position: sticky;
   top: 0;
-  background-color: $polina-white;
+  background-color:#2A4439;
   width: 100%;
   z-index: 99;
-  color: #2A4439;
+  color: $polina-white;
   .header-top {
     width: 100%;
     padding:100px 30px 10px 30px;
@@ -165,7 +170,7 @@
 .card-garden-plant {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 34px;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -262,20 +267,21 @@
   color: #2A4439;
   background-color: #F5f4f4;
   // border: 0.7px solid black;
-  border-radius: 5px;
+  border-radius: 25px;
   height: 120px;
   margin: 40px 40px 0 40px;
   align-items: center;
-
+  box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
   h2 {
     font-family: 'Gilroy-Light', sans-serif;
-    font-size: 16px;
     font-weight: bold;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 
   p {
     font-size: 12px;
+    color: gray;
   }
 
   img {
@@ -283,13 +289,13 @@
     height: 120px;
     width: 120px;
     object-fit: cover;
-    border-radius: 5px 0 0 5px;
+    border-radius: 25px 0 0 25px;
   }
 
   .card-info {
-    padding: 20px;
+    padding: 16px;
+    height:100%;
     font-family: 'Gilroy-Light', sans-serif;
-    font-size: 16px;
     font-weight: bold;
   }
 }
@@ -343,23 +349,6 @@
   }
 }
 
-#card-add-plant-image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 85px;
-  width: 85px;
-  margin: 5px 10px;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  background-image: linear-gradient(rgba(245, 245, 244, 0.3),rgba(245, 245, 244, 0.3)), url('https://i.pinimg.com/originals/44/d1/ef/44d1efed2e3e5b3a9d1f0d1537a1ec64.png');
-  background-size: cover;
-  justify-content: center;
-  i {
-    font-size: 40px;
-    color: $polina-white;
-  }
-}
 #edit-garden-icon {
   color:#2A4439;
   font-size: 20px;
