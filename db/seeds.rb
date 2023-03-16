@@ -72,7 +72,7 @@ garden_home= Garden.create(
   location: 'Barcelona, Spain'
 )
 garden_fruit = Garden.create(
-  name: 'Fruit Garden',
+  name: 'Fruits',
   location: 'Barcelona, Spain'
 )
 

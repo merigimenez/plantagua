@@ -9,21 +9,20 @@
       <p class="black-text">No gardens</p>
       <p class="black-text">Click the add button to begin!</p>
     <% else %>
+
       <% @gardens.each do |element| %>
         <%= link_to garden_path(element), class:"card-garden" do %>
-          <img src="https://e0.pxfuel.com/wallpapers/236/153/desktop-wallpaper-leaves-plant-green-dark-for-your-mobile-tablet-explore-plant-tropical-plant-plant-vs-zombies-jimmy-page-dark-leaves-aesthetic.jpg" alt="">
-          <div class="card-info">
+          <div class="card-white-bottom ">
             <h2><%= element.name %></h2>
+          </div>
+          <div class="card-green-bottom">
             <p class="location"><i class="fa-solid fa-location-dot"></i> <%= element.location %></p>
             <p><i class="fa-solid fa-seedling"></i> <%= element.plants.count %></p>
-            <% if element.users.count == 0 %>
-              <p><i class="fa-solid fa-user-group"></i> <em>not shared</em></p>
-            <% else %>
-              <p><i class="fa-solid fa-user-group"></i> <%= element.users.count %></p>
-            <% end %>
+            <p><i class="fa-solid fa-user-group"></i> <%= element.users.count %></p>
           </div>
         <% end %>
       <% end %>
+
     <% end %>
     <%= link_to new_garden_path, class:'circular-btn' do %>
       <i class="fa-solid fa-plus"></i>
