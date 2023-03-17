@@ -39,7 +39,7 @@ class GardenPlantsController < ApplicationController
   def edit; end
 
   def update
-    if @garden_plant.update(garden_plant_params)
+    if @garden_plant.update(garden_plant_params_update)
       redirect_to garden_path(@garden_plant.garden)
     else
       render "garden_plants/edit", status: :unprocessable_entity
@@ -65,7 +65,11 @@ class GardenPlantsController < ApplicationController
   private
 
   def garden_plant_params
-    params.require(:garden_plant).permit(:name, :photo, :plant_id, :last_day)
+    params.require(:garden_plant).permit(:name, :photo, :plant_id, :last_day, :outdoor)
+  end
+
+  def garden_plant_params_update
+    params.require(:garden_plant).permit(:name, :photo, :last_day, :outdoor)
   end
 
   def set_garden_plant
