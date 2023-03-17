@@ -12,7 +12,7 @@ require 'json'
 puts 'Cleaning Database'
 UserGarden.destroy_all
 GardenPlant.destroy_all
-# Chatroom.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 Plant.destroy_all
 Garden.destroy_all
