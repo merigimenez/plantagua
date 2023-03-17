@@ -44,8 +44,10 @@
               <div class = "watering ps-3 align-self-end">
                 <% if days > 1 %>
                   <p>In <%= days %> days<p>
+                <% elsif days == 1%>
+                  <p>In 1 day</p>
                 <% else %>
-                  <p>Tomorrow <p>
+                  <p>Today<p>
                 <% end %>
               </div>
               <div class = "name px-3 align-self-start"><p><%= element.name %></p></div>
