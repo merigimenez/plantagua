@@ -39,7 +39,7 @@ puts 'Creating Plants'
   end
 # end
 
-USERS
+# USERS
 puts 'Creating user Gen'
 user_gen = User.create(
   email: 'genevievewarthon@gmail.com',
