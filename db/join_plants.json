@@ -356,6 +356,27 @@
     },
     "image": "https://www.gardeningknowhow.com/wp-content/uploads/2020/11/organic-basil.jpg",
     "synonyms": "Genovese basil"
+  },
+  {
+    "id": 18,
+    "common_name": "Rosemary",
+    "scientific_name": "Salvia rosmarinus",
+    "frequency": {
+      "january": 13,
+      "february": 13,
+      "march": 12,
+      "april": 11,
+      "may": 10,
+      "june": 8,
+      "july": 7,
+      "august": 7,
+      "september": 8,
+      "october": 10,
+      "november": 12,
+      "december": 13
+    },
+    "image": "https://teixidor.com/wp-content/uploads/2021/03/Rosemary-Romero-Romani-Rosmarinus-800x600-1.jpg",
+    "synonyms": "Rosmarinus officinalis"
   }
   ]
 }
