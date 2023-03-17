@@ -6,24 +6,28 @@
 
   <div class='card-white'>
     <% if @gardens.count == 0 %>
-      <p class="black-text">No gardens</p>
-      <p class="black-text">Click the add button to begin!</p>
+      <div class="black-text-box">
+        <p class="black-text"><em>No gardens</em></p>
+        <p class="black-text text-center pt-3"><em>Click the add button to begin!</em></p>
+        <p class="black-text pt-3"><i class="fa-solid fa-seedling"></i></p>
+      </div>
     <% else %>
+
       <% @gardens.each do |element| %>
         <%= link_to garden_path(element), class:"card-garden" do %>
-          <img src="https://e0.pxfuel.com/wallpapers/236/153/desktop-wallpaper-leaves-plant-green-dark-for-your-mobile-tablet-explore-plant-tropical-plant-plant-vs-zombies-jimmy-page-dark-leaves-aesthetic.jpg" alt="">
-          <div class="card-info">
-            <h2><%= element.name %></h2>
-            <p class="location"><i class="fa-solid fa-location-dot"></i> <%= element.location %></p>
-            <p><i class="fa-solid fa-seedling"></i> <%= element.plants.count %></p>
-            <% if element.users.count == 0 %>
-              <p><i class="fa-solid fa-user-group"></i> <em>not shared</em></p>
-            <% else %>
-              <p><i class="fa-solid fa-user-group"></i> <%= element.users.count %></p>
-            <% end %>
+          <div class="card-white-bottom ps-3 align-self-end">
+            <h2 class="align-self-end pe-3"><%= element.name %></h2>
+          </div>
+          <div class="card-green-bottom">
+            <p class="location ps-3 align-self-center"><i class="fa-solid fa-location-dot"></i> <%= element.location %></p>
+            <div class="card-green-bottom-icons pe-2">
+              <p class="align-self-center"><i class="fa-solid fa-seedling"></i> <%= element.plants.count %></p>
+              <p class="px-3 align-self-center"><i class="fa-solid fa-user-group"></i> <%= element.users.count %></p>
+            </div>
           </div>
         <% end %>
       <% end %>
+
     <% end %>
     <%= link_to new_garden_path, class:'circular-btn' do %>
       <i class="fa-solid fa-plus"></i>
