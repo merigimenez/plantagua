@@ -20,14 +20,13 @@ class User < ApplicationRecord
   # refactor to select (filter array)
   def plants_to_water
     plants_due = []
-
+    month = Date.today.strftime("%B")
     self.gardens.each do |garden|
       garden.garden_plants.each do |element|
-        month = Date.today.strftime("%B")
         water_date = (element.last_day + element.plant.frequency[month.downcase])
         plants_due << element if water_date <= Date.today
       end
     end
-    plants_due.sort_by { |plant| plant.last_day }
+    plants_due.sort_by { |element| element.last_day + element.plant.frequency[month.downcase] }
   end
 end
