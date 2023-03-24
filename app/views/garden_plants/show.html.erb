@@ -8,7 +8,7 @@
     <div class = "white-border-card"></div>
   </div>
   <div class="card-plant-show-bottom">
-    <h1 class = "mb-3"><%= @garden_plant.name.capitalize %></h1>
+    <h1 class = "mb-3"><%= garden_plant_name(@garden_plant) %></h1>
     <p><i class="fa-solid fa-seedling"></i> <%= @garden_plant.plant.name %></p>
     <p>Taking care of plants requires attention and effort. You can find some general tips for plant care here.
     <a href="https://www.bhg.com/search?q=<%= @garden_plant.plant.name %>"><i class="fa-solid fa-circle-info ms-2"></i></a>

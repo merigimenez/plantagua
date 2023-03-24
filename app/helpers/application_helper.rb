@@ -17,8 +17,4 @@ module ApplicationHelper
       return image_tag garden_plant.plant.image
     end
   end
-
-  def garden_plant_name(garden_plant)
-    garden_plant.name ? garden_plant.name.capitalize! : garden_plant.plant.name.capitalize!
-  end
 end
