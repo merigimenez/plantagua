@@ -377,6 +377,27 @@
     },
     "image": "https://teixidor.com/wp-content/uploads/2021/03/Rosemary-Romero-Romani-Rosmarinus-800x600-1.jpg",
     "synonyms": "Rosmarinus officinalis"
+  },
+  {
+    "id": 19,
+    "common_name": "Aroid Palm",
+    "scientific_name": "Zamioculcas zamiifolia",
+    "frequency": {
+      "january": 29,
+      "february": 30,
+      "march": 27,
+      "april": 24,
+      "may": 20,
+      "june": 15,
+      "july": 11,
+      "august": 10,
+      "september": 15,
+      "october": 20,
+      "november": 26,
+      "december": 29
+    },
+    "image": "https://teixidor.com/wp-content/uploads/2021/03/Rosemary-Romero-Romani-Rosmarinus-800x600-1.jpg",
+    "synonyms": "Zanzibar gem"
   }
   ]
 }
