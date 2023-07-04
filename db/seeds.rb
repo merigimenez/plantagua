@@ -10,13 +10,13 @@ require 'json'
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts 'Cleaning Database'
-UserGarden.destroy_all
-GardenPlant.destroy_all
-Chatroom.destroy_all
-User.destroy_all
+# UserGarden.destroy_all
+# GardenPlant.destroy_all
+# Chatroom.destroy_all
+# User.destroy_all
 Plant.destroy_all
-Garden.destroy_all
-Notification.destroy_all
+# Garden.destroy_all
+# Notification.destroy_all
 
 
 # PLANTS
@@ -39,187 +39,187 @@ puts 'Creating Plants'
   end
 # end
 
-# USERS
-puts 'Creating user Gen'
-user_gen = User.create(
-  email: 'genevievewarthon@gmail.com',
-  password: '12345678',
-  full_name: 'Genevieve Warthon',
-  notification_time: '19:00:00.00',
-  admin: true
-)
-puts 'Creating user Meri'
-user_meri = User.create(
-  email: 'gimenezmarianae@gmail.com',
-  password: '12345678',
-  full_name: 'Meri Gimenez',
-  notification_time: '19:00:00.00',
-  admin: true
-)
-puts 'Creating user Poli'
-user_poli = User.create(
-  email: 'polina2001sokolovas@gmail.com',
-  password: '12345678',
-  full_name: 'Polina Sokolova',
-  notification_time: '19:00:00.00',
-  admin: true
-)
+# # USERS
+# puts 'Creating user Gen'
+# user_gen = User.create(
+#   email: 'genevievewarthon@gmail.com',
+#   password: '12345678',
+#   full_name: 'Genevieve Warthon',
+#   notification_time: '19:00:00.00',
+#   admin: true
+# )
+# puts 'Creating user Meri'
+# user_meri = User.create(
+#   email: 'gimenezmarianae@gmail.com',
+#   password: '12345678',
+#   full_name: 'Meri Gimenez',
+#   notification_time: '19:00:00.00',
+#   admin: true
+# )
+# puts 'Creating user Poli'
+# user_poli = User.create(
+#   email: 'polina2001sokolovas@gmail.com',
+#   password: '12345678',
+#   full_name: 'Polina Sokolova',
+#   notification_time: '19:00:00.00',
+#   admin: true
+# )
 
-# GARDENS
-puts 'Creating gardens'
-garden_home= Garden.create(
-  name: 'Home Garden',
-  location: 'Barcelona, Spain'
-)
-garden_fruit = Garden.create(
-  name: 'Fruits',
-  location: 'Barcelona, Spain'
-)
+# # GARDENS
+# puts 'Creating gardens'
+# garden_home= Garden.create(
+#   name: 'Home Garden',
+#   location: 'Barcelona, Spain'
+# )
+# garden_fruit = Garden.create(
+#   name: 'Fruits',
+#   location: 'Barcelona, Spain'
+# )
 
-# SEEDIING GARDENS: GARDEN_PLANTS
-puts 'Creating garden plants for garden 1'
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[0].id,
-  name: Plant.all[0].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[1].id,
-  name: Plant.all[1].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[2].id,
-  name: Plant.all[2].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[3].id,
-  name: Plant.all[3].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[4].id,
-  name: Plant.all[4].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[5].id,
-  name: Plant.all[5].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[6].id,
-  name: Plant.all[6].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[7].id,
-  name: Plant.all[7].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[8].id,
-  name: Plant.all[8].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[9].id,
-  name: Plant.all[9].name,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-# for notification test
-garden_plant = GardenPlant.create(
-  garden_id: garden_home.id,
-  plant_id: Plant.all[10].id,
-  name: Plant.all[10].name,
-  last_day: Date.today - Plant.all[10].frequency[Date.today.strftime("%B").downcase],
-  outdoor: [true, false].sample
-)
+# # SEEDIING GARDENS: GARDEN_PLANTS
+# puts 'Creating garden plants for garden 1'
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[0].id,
+#   name: Plant.all[0].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[1].id,
+#   name: Plant.all[1].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[2].id,
+#   name: Plant.all[2].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[3].id,
+#   name: Plant.all[3].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[4].id,
+#   name: Plant.all[4].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[5].id,
+#   name: Plant.all[5].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[6].id,
+#   name: Plant.all[6].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[7].id,
+#   name: Plant.all[7].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[8].id,
+#   name: Plant.all[8].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[9].id,
+#   name: Plant.all[9].name,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# # for notification test
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_home.id,
+#   plant_id: Plant.all[10].id,
+#   name: Plant.all[10].name,
+#   last_day: Date.today - Plant.all[10].frequency[Date.today.strftime("%B").downcase],
+#   outdoor: [true, false].sample
+# )
 
-puts 'Creating garden plants for garden 2'
-garden_plant = GardenPlant.create(
-  garden_id: garden_fruit.id,
-  plant_id: Plant.all[10].id,
-  name: Plant.all[10].name,
-  # photo: Plant.all[10].image,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_fruit.id,
-  plant_id: Plant.all[11].id,
-  name: Plant.all[11].name,
-  # photo: Plant.all[11].image,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_fruit.id,
-  plant_id: Plant.all[12].id,
-  name: Plant.all[12].name,
-  # photo: Plant.all[12].image,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
-garden_plant = GardenPlant.create(
-  garden_id: garden_fruit.id,
-  plant_id: Plant.all[13].id,
-  name: Plant.all[13].name,
-  # photo: Plant.all[13].image,
-  last_day: Date.today - rand(1..5),
-  outdoor: [true, false].sample
-)
+# puts 'Creating garden plants for garden 2'
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_fruit.id,
+#   plant_id: Plant.all[10].id,
+#   name: Plant.all[10].name,
+#   # photo: Plant.all[10].image,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_fruit.id,
+#   plant_id: Plant.all[11].id,
+#   name: Plant.all[11].name,
+#   # photo: Plant.all[11].image,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_fruit.id,
+#   plant_id: Plant.all[12].id,
+#   name: Plant.all[12].name,
+#   # photo: Plant.all[12].image,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
+# garden_plant = GardenPlant.create(
+#   garden_id: garden_fruit.id,
+#   plant_id: Plant.all[13].id,
+#   name: Plant.all[13].name,
+#   # photo: Plant.all[13].image,
+#   last_day: Date.today - rand(1..5),
+#   outdoor: [true, false].sample
+# )
 
-# USER_GARDEN
-puts 'Creating link 1 user_garden to home'
-garden_plant = UserGarden.create(
-  garden_id: garden_home.id,
-  user_id: user_gen.id
-)
-puts 'Creating link 2 user_garden to home'
-garden_plant = UserGarden.create(
-  garden_id: garden_home.id,
-  user_id: user_meri.id
-)
-puts 'Creating link 3 user_garden to home'
-garden_plant = UserGarden.create(
-  garden_id: garden_home.id,
-  user_id: user_poli.id
-)
+# # USER_GARDEN
+# puts 'Creating link 1 user_garden to home'
+# garden_plant = UserGarden.create(
+#   garden_id: garden_home.id,
+#   user_id: user_gen.id
+# )
+# puts 'Creating link 2 user_garden to home'
+# garden_plant = UserGarden.create(
+#   garden_id: garden_home.id,
+#   user_id: user_meri.id
+# )
+# puts 'Creating link 3 user_garden to home'
+# garden_plant = UserGarden.create(
+#   garden_id: garden_home.id,
+#   user_id: user_poli.id
+# )
 
-puts 'Creating link 1 user_garden to fruit'
-garden_plant = UserGarden.create(
-  garden_id: garden_fruit.id,
-  user_id: user_gen.id
-)
+# puts 'Creating link 1 user_garden to fruit'
+# garden_plant = UserGarden.create(
+#   garden_id: garden_fruit.id,
+#   user_id: user_gen.id
+# )
 
-# NOTIFICATION
-notification_first = Notification.create(
-  user_id: User.first.id
-)
+# # NOTIFICATION
+# notification_first = Notification.create(
+#   user_id: User.first.id
+# )
 
-# CHATROOM
-chatroom_first = Chatroom.create(
-  name: 'Plantaqua'
-)
+# # CHATROOM
+# chatroom_first = Chatroom.create(
+#   name: 'Plantaqua'
+# )
